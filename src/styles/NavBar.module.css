@@ -1,0 +1,54 @@
+.NavBar {
+    background-color: #008B8B;
+    border: 1px solid #dadadf;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: #555555;
+    transition: color ease-in-out 0.3s;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:hover i {
+    background: #333;
+    color: #fff;
+    transition: color ease-in-out 0.3s;
+  }
+  
+  i {
+    color: #cfced3;
+    font-size: 1.6rem;
+    padding: 7px;
+    vertical-align: middle;
+  }
+  
+  i:hover {
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+    color: #2142b2;
+  }
+  
+
+  /* @media screen and (min-width: 500px) {
+  .navbar-light .navbar-toggler {
+    color: white;
+    border-color: white;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+  } */
