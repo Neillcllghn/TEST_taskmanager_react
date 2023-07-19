@@ -4,3 +4,42 @@
     min-height: 100vh;
 }
 
+.Main {
+    padding-top: 81px;
+}
+
+/* .navbar-light .navbar-brand {
+    color: #ffff;
+} */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: #fff;
+    transition: color ease-in-out 0.3s;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:hover i {
+    background: #333;
+    color: #fff;
+    transition: color ease-in-out 0.3s;
+  }
+  
+  i {
+    color: #cfced3;
+    font-size: 1.6rem;
+    padding: 7px;
+    vertical-align: middle;
+  }
+  
+  i:hover {
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+    color: #2142b2;
+  }
