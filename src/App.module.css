@@ -8,12 +8,11 @@
     padding-top: 81px;
 }
 
-/* .navbar-light .navbar-brand {
-    color: #ffff;
-} */
 
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
   }
   
   a {
@@ -41,5 +40,35 @@
   i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: #2142b2;
+    color: #fff;
   }
+
+
+  /*Might not use*/
+
+  figure {
+    text-align: center;
+    display: inline-block;
+  }
+  
+  /* scrollbar */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .Content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 2px;
+    border: 1px solid #dadadf;
+  }
+  
