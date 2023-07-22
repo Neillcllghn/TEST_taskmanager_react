@@ -2,12 +2,70 @@ import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from 'react-router-dom';
-import { useCurrentUser } from '../context/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
+import Avatar from "./Avatar";
+import axios from 'axios';
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
 
-    const loggedInIcons = <>{currentUser?.username}</>;
+    const {expanded, setExpanded, ref } = useClickOutsideToggle();
+
+    const handleSignOut = async () => {
+        try {
+          await axios.post("dj-rest-auth/logout/");
+          setCurrentUser(null);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+    const createTaskIcon = (
+        <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active} 
+            to="/tasks/create">
+                <i className="fas fa-plus-square"></i> New Task
+        </NavLink>
+    )
+    const createCategoryIcon = (
+        <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active} 
+            to="/category/create">
+                <i className="fas fa-plus-square"></i> New Category
+        </NavLink>
+    )
+
+    const loggedInIcons = 
+            <> 
+                <NavLink 
+                    className={styles.NavLink} 
+                    activeClassName={styles.Active} 
+                    to="/tasklist">
+                        <i className="fa-solid fa-list-check"></i> Tasklist
+                </NavLink>
+                <NavLink 
+                    className={styles.NavLink} 
+                    activeClassName={styles.Active} 
+                    to="/category">
+                        <i className="fa-solid fa-layer-group"></i> Categories
+                </NavLink>
+                <NavLink
+                    className={styles.NavLink} 
+                    to="/"
+                    onClick = {handleSignOut}
+                    >
+                        <i className="fas fa-sign-out-alt"></i> Sign out    
+                </NavLink>
+                <NavLink 
+                    className={styles.NavLink} 
+                    to={`/profiles/${currentUser?.profile_id}`}>
+                        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+                </NavLink>
+                </>;
 
     const loggedOutIcons = 
             <>
@@ -26,14 +84,20 @@ const NavBar = () => {
             </>
 
   return (
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
+    <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top">
     <Container>
         <NavLink to="/">
             <Navbar.Brand className={styles.NavBarBrand}>
                  TASKMASTER
             </Navbar.Brand>
         </NavLink>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {currentUser && createTaskIcon}
+        {currentUser && createCategoryIcon}
+    <Navbar.Toggle 
+    ref={ref}
+    onClick={() => setExpanded(!expanded)}
+    aria-controls="basic-navbar-nav" 
+    />
     <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
             <NavLink exact
