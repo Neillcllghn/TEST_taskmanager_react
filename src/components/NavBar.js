@@ -7,6 +7,7 @@ import Avatar from "./Avatar";
 import axios from 'axios';
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
+
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
@@ -45,12 +46,12 @@ const NavBar = () => {
                     className={styles.NavLink} 
                     activeClassName={styles.Active} 
                     to="/tasklist">
-                        <i className="fa-solid fa-list-check"></i> Tasklist
+                        <i className="fa-solid fa-list-check"></i> Task List
                 </NavLink>
                 <NavLink 
                     className={styles.NavLink} 
                     activeClassName={styles.Active} 
-                    to="/category">
+                    to="/categoryList">
                         <i className="fa-solid fa-layer-group"></i> Categories
                 </NavLink>
                 <NavLink

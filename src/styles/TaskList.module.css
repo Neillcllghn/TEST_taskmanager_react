@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.TasksTitle {
+    cursor: pointer;
+}
+
+.TasksUrgent {
+    padding: 5px 8px;
+    border: 1px solid rgb(13, 159, 204);
+}
+
+.TabList > span {
+    padding: 5px 8px;
+    border: 1px solid rgb(13, 159, 204);
+    border-radius: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.TabList > span.active {
+    background-color: #008B8B;
+    color: #fff;
+}
