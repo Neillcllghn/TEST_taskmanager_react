@@ -55,17 +55,18 @@ class TaskList extends Component {
 
     displayCompleted = status => {
         if (status) {
-            return this.setstatus({ viewCompleted: true });
+            return this.setState({ viewCompleted: true });
         }
-        return this.setstatus({ viewCompleted: false });
+        return this.setState({ viewCompleted: false });
     }
 
     displayUrgent = status => {
         if (status) {
-            return this.setstatus({ viewUrgent: true });
+            return this.setState({ viewUrgent: true });
         }
-        return this.setstatus({ viewUrgent: false });
+        return this.setState({ viewUrgent: false });
     }
+
 
     renderTabList = () => {
         return (
@@ -91,6 +92,7 @@ class TaskList extends Component {
         const newItems = this.state.taskList.filter(
             item => item.completed === viewCompleted
         );
+
         return newItems.map(item => (
             <li 
             key={item.id}
@@ -104,9 +106,6 @@ class TaskList extends Component {
                 <button className='btn btn-info mr-2'>Edit</button>
                 <button className='btn btn-danger mr-2'>Delete</button>
                 </span>
-                <span className={`${styles.TasksUrgent} mr-2${this.state.viewUrgent === true}`}>
-                    Urgent
-                </span>  
             </li>
         ))
     };
