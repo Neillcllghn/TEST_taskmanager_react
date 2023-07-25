@@ -7,6 +7,7 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import LoginForm from "./pages/auth/LoginForm";
 import TaskList from "./pages/tasks/TaskList";
 import TaskCreateForm from "./pages/tasks/TaskCreateForm"
+import CategoryCreateForm from "./pages/categories/CategoryCreateForm";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/login" render={() => <LoginForm /> } />
             <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route exact path="/tasks/create" render={() => <TaskCreateForm />} />
+            <Route exact path="/category/create" render={() => <CategoryCreateForm />} />
             <Route exact path="/tasklist" render={() => <TaskList />} />
             <Route render={() => <p>Page not found!</p>} />
         </Switch>
