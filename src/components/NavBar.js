@@ -51,7 +51,7 @@ const NavBar = () => {
                 <NavLink 
                     className={styles.NavLink} 
                     activeClassName={styles.Active} 
-                    to="/categorylist">
+                    to="/categorieslist">
                         <i className="fa-solid fa-layer-group"></i> Categories
                 </NavLink>
                 <NavLink

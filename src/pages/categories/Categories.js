@@ -1,19 +1,39 @@
 import React from 'react'
+import { Card, Media } from 'react-bootstrap';
+import { useCurrentUser } from '../../context/CurrentUserContext';
+import { Link } from "react-router-dom";
+import Avatar from '../../components/Avatar';
 
-import Col from 'react-bootstrap/Col'
-import { Row } from 'react-bootstrap'
-import Container from 'react-bootstrap'
+const Categories = (props) => {
+    const {
+        owner,
+        profile_id,
+        profile_image,
+        category_title,
+        created_at,
+        categoryList,
+    } = props;
 
-function Categories() {
-    // logic will be displayed here
+    const currentUser = useCurrentUser();
+    const is_owner = currentUser?.username === owner
 
   return (
-    <Row className="h-100">
-        <Col className="py-2 p-0 p-lg-2" lg={8}>
-             <p>Categories</p>
-        </Col>
-    </Row>
+    <Card>
+        <Card.Body>
+            <Media className="align-items-center justify-content-between">
+                <Link to={`/profiles/${profile_id}`}>
+                    <Avatar src={profile_image} height={55} /> 
+                    {owner}
+                </Link>
+                <div className='d-flex align-items-center'>
+                    <span>{created_at}</span>
+                    {is_owner && categoryList && "..."}
+                </div>
+            </Media>
+            {category_title && <Card.Title className='text-center'>{category_title}</Card.Title>}
+        </Card.Body>
+    </Card>
   )
-}
+};
 
 export default Categories
