@@ -2,9 +2,11 @@ import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
-// import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
+import styles from "../../styles/TaskCreateEditForm.module.css"
+// import Categories from '../categories/Categories';
 
 
 function TaskCreateForm() {
@@ -13,13 +15,14 @@ function TaskCreateForm() {
 
   const [taskData, setTaskData] = useState({
     title:"",
+    category: [],
     description:"",
     urgent: false,
     due_date:"",
     completed: false,
   });
 
-  const { title, description, urgent, due_date, completed } = taskData;
+  const { title, category, description, urgent, due_date, completed } = taskData;
 
   const dateInputRef = useRef(null);
 
@@ -31,6 +34,8 @@ function TaskCreateForm() {
   };
 
   return (
+    <Row className={styles.Row}>
+        <Container className='col-md-6 col-sma-10 mx-auto p-0'>
     <Form>
         <Form.Group>
             <Form.Label>Task Title</Form.Label>
@@ -42,7 +47,7 @@ function TaskCreateForm() {
             onChange={handleChange}
             />
         </Form.Group>
-        {/* <Form.Group>
+        <Form.Group>
             <Form.Label>Category</Form.Label>
             <Form.Control
             type="dropdown" 
@@ -51,7 +56,7 @@ function TaskCreateForm() {
             value={category}
             onChange={handleChange}
             />
-        </Form.Group> */}
+        </Form.Group>
         <Form.Group>
             <Form.Label>Task Description</Form.Label>
             <Form.Control
@@ -100,6 +105,8 @@ function TaskCreateForm() {
             Cancel
         </Button>
     </Form>
+    </Container>
+    </Row>
   );
 }
 
