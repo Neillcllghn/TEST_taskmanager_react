@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,9 +9,12 @@ import styles from "../../styles/TaskCreateEditForm.module.css"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "react-bootstrap";
+// import Categories from "../categories/Categories";
 
 
-function TaskCreateForm() {
+
+
+function TaskCreateForm(filter="") {
 
   const [errors, setErrors] = useState({});
 
@@ -23,6 +26,8 @@ function TaskCreateForm() {
     due_date:"",
     completed: false,
   });
+
+  const [categoryData, setCategoryData] = useState({ results: [] })
 
   const { title, category, description, urgent, due_date, completed } = taskData;
   const history = useHistory();
@@ -62,8 +67,20 @@ function TaskCreateForm() {
     }
 }
 
+useEffect(() => {
+    const fetchCategoryData = async () => {
+        try {
+            const {data} = await axiosReq.get(`/category/${filter}`)
+            setCategoryData(data)
+        } catch(err) {
+            console.log(err)
+        }
+    }
+    fetchCategoryData()
+})
+
   return (
-    <Row className={styles.Row}>
+    <Row className={styles.TaskFormBox}>
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
     <Form onSubmit={handleSubmit}>
         <Form.Group>
@@ -83,15 +100,16 @@ function TaskCreateForm() {
             <Form.Label>Category</Form.Label>
             <Form.Control
             as="select"
-            placeholder="Select a Category" 
             name ="category"
             value={category}
             onChange={handleChange}>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            {categoryData.results.length ? (
+                categoryData => (
+                    <option key={categoryData.id} {...categoryData} value={category} setCategoryData={setCategoryData}>
+                        {categoryData.name}
+                    </option>
+                )
+            ): (<option value="">--Please choose an option--</option>)};
             </Form.Control>
             </Form.Group>
         {errors.category?.map((message, idx) =>
@@ -110,9 +128,9 @@ function TaskCreateForm() {
         {errors.description?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group check>
-            <Form.Label>Urgent</Form.Label>
-            <Form.Control
+        <Form.Group>
+            <Form.Check
+            label="Urgent"
             type="checkbox" 
             name ="urgent"
             value={urgent}
@@ -132,9 +150,9 @@ function TaskCreateForm() {
         {errors.due_date?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group check>
-            <Form.Label>Completed</Form.Label>
-            <Form.Control
+        <Form.Group>
+            <Form.Check
+            label="Completed"
             type="checkbox" 
             name ="completed"
             value={completed}
@@ -143,11 +161,11 @@ function TaskCreateForm() {
         </Form.Group>
 
         <Button 
-         type="submit" color="success">
+         type="submit" color="success" className={styles.TaskCreateBtn}>
             Create
         </Button>
         <Button 
-         className="btn btn-danger mr-2" onClick={() => history.goBack()}>
+         className={styles.TaskCancelBtn} onClick={() => history.goBack()}>
             Cancel
         </Button>
     </Form>

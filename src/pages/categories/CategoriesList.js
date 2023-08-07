@@ -10,7 +10,7 @@ import Categories from './Categories';
 
 
 function CategoriesList({message, filter=""}) {
-    const [category, setCategory] = useState({ result: [] });
+    const [category, setCategory] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
 

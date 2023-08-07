@@ -42,7 +42,7 @@ function CategoryCreateForm() {
 
 
   return (
-    <Row className={styles.Row}>
+    <Row className={styles.CategoryFormBox}>
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
         <Form onSubmit={handleSubmit}>
             <Form.Group>
@@ -59,10 +59,10 @@ function CategoryCreateForm() {
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
 
-            <Button type="submit">
+            <Button type="submit" className={styles.CategoryCreateBtn}>
                 Create
             </Button>
-            <Button className="btn btn-danger mr-2" onClick={() => history.goBack()}>
+            <Button className={styles.CategoryCancelBtn} onClick={() => history.goBack()}>
                 Cancel
             </Button>
 
