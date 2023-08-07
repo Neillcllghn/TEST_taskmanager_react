@@ -10,6 +10,7 @@ import TaskCreateForm from "./pages/tasks/TaskCreateForm"
 import CategoryCreateForm from "./pages/categories/CategoryCreateForm";
 import CategoryList from "./pages/categories/CategoryList";
 import CategoriesList from "./pages/categories/CategoriesList";
+import CategoryEditForm from "./pages/categories/CategoryEditForm";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route exact path="/tasks/create" render={() => <TaskCreateForm />} />
             <Route exact path="/category/create" render={() => <CategoryCreateForm />} />
+            <Route exact path="/category/:id/edit" render={() => <CategoryEditForm />} />
             <Route exact path="/category/:id" render={() => <CategoryList />} />
             <Route exact path="/categorieslist/" render={() => <CategoriesList message="No Results found..."/>} />
             {/* <Route exact path="/tasklist" render={() => <TaskList />} /> */}
