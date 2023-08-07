@@ -1,11 +1,14 @@
 import React from 'react'
 import { Card, Media } from 'react-bootstrap';
 import { useCurrentUser } from '../../context/CurrentUserContext';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from '../../components/Avatar';
+import { CategoryMoreDropdown } from '../../components/CategoryMoreDropdown';
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Categories = (props) => {
     const {
+        id,
         owner,
         profile_id,
         profile_image,
@@ -15,7 +18,21 @@ const Categories = (props) => {
     } = props;
 
     const currentUser = useCurrentUser();
-    const is_owner = currentUser?.username === owner
+    const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/category/${id}/edit`)
+    }
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`category/${id}`);
+            history.goBack("/categorieslist");
+        } catch(err) {
+            console.log(err);
+        }
+    };
 
   return (
     <Card>
@@ -27,7 +44,9 @@ const Categories = (props) => {
                 </Link>
                 <div className='d-flex align-items-center'>
                     <span>{created_at}</span>
-                    {is_owner && categoryList && "..."}
+                    {is_owner && categoryList }<CategoryMoreDropdown 
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}/>
                 </div>
             </Media>
             {category_title && <Card.Title className='text-center'>{category_title}</Card.Title>}

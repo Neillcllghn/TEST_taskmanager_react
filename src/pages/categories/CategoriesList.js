@@ -6,6 +6,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css"
 import Asset from '../../components/Assets';
 import Categories from './Categories';
+// import styles from '../../styles/CategoriesList.module.css'
 
 
 
@@ -26,13 +27,24 @@ function CategoriesList({message, filter=""}) {
         }
 
         setHasLoaded(false)
-        fetchCategory()
+        const timer = setTimeout(() => {
+            fetchCategory();
+          }, 500);
+      
+          return () => {
+            clearTimeout(timer);
+          };
+
     }, [filter, pathname])
 
   return (
     <Row className='h-100'>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
             <p>List of Categories mobile</p>
+
+
+
+
             {hasLoaded ? (
                 <>
                 {category.results.length ? (
