@@ -9,51 +9,63 @@ import styles from "../../styles/TaskCreateEditForm.module.css"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "react-bootstrap";
-// import Categories from "../categories/Categories";
 
 
 
 
-function TaskCreateForm(filter="") {
+function TaskCreateForm(props) {
 
   const [errors, setErrors] = useState({});
 
   const [taskData, setTaskData] = useState({
     title:"",
-    category: [],
+    category: "defaultCategoryId",
     description:"",
-    urgent: false,
+    is_urgent: false,
     due_date:"",
     completed: false,
   });
 
   const [categoryData, setCategoryData] = useState({ results: [] })
 
-  const { title, category, description, urgent, due_date, completed } = taskData;
+  const { title, category, description, is_urgent, due_date, completed } = taskData;
   const history = useHistory();
 
   const dateInputRef = useRef(null);
 
-  const handleChange = (event) => {
-    setTaskData({
-        ...taskData,
-        [event.target.name]: event.target.value,
-    });
-  };
+const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    if (type === 'checkbox') {
+        setTaskData((prevTaskData) => ({
+            ...prevTaskData,
+            [name]: checked,
+        }));
+    } else {
+    setTaskData((prevTaskData) => ({
+        ...prevTaskData,
+        [name]: value,
+    }));
+    }
+};
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append(
-        'title', title,
-        'category', category,
-        'description', description,
-        'urgent', urgent,
-        'due_date', due_date,
-        'completed', completed
+    formData.append('title', title);
+    formData.append('category', category);
+    formData.append('description', description);
+    formData.append('is_urgent', is_urgent);
+    // Convert the due_date to the expected format
+    const formattedDueDate = new Date(due_date);
+    const day = formattedDueDate.getDate().toString().padStart(2, '0');
+    const month = formattedDueDate.toLocaleString('default', { month: 'short' });
+    const year = formattedDueDate.getFullYear();
 
-    );
+    const formattedDate = `${day} ${month} ${year}`;
+    formData.append('due_date', formattedDate);
+    formData.append('completed', completed);
 
     try{
         const {data} =  await axiosReq.post('/tasks/', formData);
@@ -68,16 +80,16 @@ function TaskCreateForm(filter="") {
 }
 
 useEffect(() => {
-    const fetchCategoryData = async () => {
+    const fetchCategories = async () => {
         try {
-            const {data} = await axiosReq.get(`/category/${filter}`)
+            const { data } = await axiosReq.get(`/category/`)
             setCategoryData(data)
         } catch(err) {
             console.log(err)
         }
     }
-    fetchCategoryData()
-})
+    fetchCategories();
+}, []);
 
   return (
     <Row className={styles.TaskFormBox}>
@@ -103,13 +115,12 @@ useEffect(() => {
             name ="category"
             value={category}
             onChange={handleChange}>
-            {categoryData.results.length ? (
-                categoryData => (
-                    <option key={categoryData.id} {...categoryData} value={category} setCategoryData={setCategoryData}>
-                        {categoryData.name}
-                    </option>
-                )
-            ): (<option value="">--Please choose an option--</option>)};
+            <option value="">--Please choose an option--</option>
+                {categoryData.results.map((categoryItem) => (
+                <option key={categoryItem.id} value={categoryItem.id}>
+                {categoryItem.category_title}
+            </option>
+        ))}
             </Form.Control>
             </Form.Group>
         {errors.category?.map((message, idx) =>
@@ -132,8 +143,9 @@ useEffect(() => {
             <Form.Check
             label="Urgent"
             type="checkbox" 
-            name ="urgent"
-            value={urgent}
+            name ="is_urgent"
+            value="true"
+            checked={is_urgent}
             onChange={handleChange}
             />
         </Form.Group>
