@@ -5,7 +5,7 @@ import {Route,Switch} from 'react-router-dom';
 import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import LoginForm from "./pages/auth/LoginForm";
-// import TaskList from "./pages/tasks/TaskList";
+import TaskList from "./pages/tasks/TaskList";
 import TaskCreateForm from "./pages/tasks/TaskCreateForm"
 import CategoryCreateForm from "./pages/categories/CategoryCreateForm";
 import CategoryList from "./pages/categories/CategoryList";
@@ -27,7 +27,7 @@ function App() {
             <Route exact path="/category/:id/edit" render={() => <CategoryEditForm />} />
             <Route exact path="/category/:id" render={() => <CategoryList />} />
             <Route exact path="/categorieslist/" render={() => <CategoriesList message="No Results found..."/>} />
-            {/* <Route exact path="/tasklist" render={() => <TaskList />} /> */}
+            <Route exact path="/tasklist" render={() => <TaskList message="No Results found..."/>} />
             <Route render={() => <p>Page not found!</p>} />
         </Switch>
         

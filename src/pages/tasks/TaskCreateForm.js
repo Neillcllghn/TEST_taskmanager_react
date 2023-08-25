@@ -57,19 +57,19 @@ const handleChange = (event) => {
     formData.append('category', category);
     formData.append('description', description);
     formData.append('is_urgent', is_urgent);
-    // Convert the due_date to the expected format
     const formattedDueDate = new Date(due_date);
-    const day = formattedDueDate.getDate().toString().padStart(2, '0');
-    const month = formattedDueDate.toLocaleString('default', { month: 'short' });
     const year = formattedDueDate.getFullYear();
+    const month = (formattedDueDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = formattedDueDate.getDate().toString().padStart(2, '0');
 
-    const formattedDate = `${day} ${month} ${year}`;
+    const formattedDate = `${year}-${month}-${day}`;
     formData.append('due_date', formattedDate);
     formData.append('completed', completed);
 
     try{
-        const {data} =  await axiosReq.post('/tasks/', formData);
-        history.push(`/tasks/${data.id}`)
+        // eslint-disable-next-line
+        const { data } =  await axiosReq.post('/tasks/', formData);
+        history.push(`/tasklist`)
     } catch (err){
         console.log(err)
         if (err.response?.status !== 401){
