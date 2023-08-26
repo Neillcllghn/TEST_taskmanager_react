@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import TaskItem from './TaskItem';
 import { Container } from 'react-bootstrap';
@@ -6,15 +6,16 @@ import appStyles from "../../App.module.css"
 import Asset from '../../components/Assets';
 
 function TaskList({message, filter=""}) {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState([{}]);
     const [showCompleted, setShowCompleted] = useState(true);
     const [hasLoaded, setHasLoaded] = useState(false);
 
     useEffect(() => {
         const fetchTasks = async () => {
           try {
-            const {data} = await axiosReq.get('/tasks/');
-            setTasks(data);
+            const { data } = await axiosReq.get('/tasks/');
+            const tasksData = data.results;
+            setTasks(tasksData);
             setHasLoaded(true); 
           } catch (err) {
             console.log(err)
