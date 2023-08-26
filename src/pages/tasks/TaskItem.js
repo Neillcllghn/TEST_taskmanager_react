@@ -16,12 +16,16 @@ function TaskItem({ task, profile_id, profile_image, owner }) {
                     {owner}
                 </Link>
         </Media>
-                {is_owner && <p>You are the owner</p>}
             <h3>{task.title}</h3>
+            <p>Owner: {task.owner}</p>
+            {is_owner ? (
+            <>
             <p>Description: {task.description}</p>
             <p>Urgent: {task.is_urgent ? 'Yes' : 'No'}</p>
             <p>Due Date: {task.due_date}</p>
             <p>Completed: {task.completed ? 'Yes' : 'No'}</p>
+            </>
+            ) : (<p>You are not the owner of this Task</p>)}
         </Card.Body>
     </Card>
   )
