@@ -27,10 +27,15 @@ function TaskEditForm() {
       useEffect(() => {
         const handleMount = async () => {
             try {
-                const {data} = await axiosReq.get(`/tasks/${id}`)
-                const {title, category, description, is_urgent, due_date, completed, is_owner} = data;
+                const [taskResponse, categoryResponse] = await Promise.all([
+                    axiosReq.get(`/tasks/${id}`),
+                    axiosReq.get('/category/')
+                ])
+                const {title, category, description, is_urgent, due_date, completed, is_owner } = taskResponse.data;
+                const categories = categoryResponse.data.results;
                 
                 is_owner ? setTaskData({title, category, description, is_urgent, due_date, completed}) : history.push('/');
+                setCategoryData({ results: categories });
             } catch(err) {
                 console.log(err);
 
@@ -57,6 +62,7 @@ function TaskEditForm() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         const formData = new FormData();
     
         formData.append('title', title);

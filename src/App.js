@@ -29,7 +29,7 @@ function App() {
             <Route exact path="/category/:id" render={() => <CategoryList />} />
             <Route exact path="/categorieslist/" render={() => <CategoriesList message="No Results found..."/>} />
             <Route exact path="/tasklist" render={() => <TaskList message="No Results found......"/>} />
-            <Route exact path="tasks/:id/edit" render={() => <TaskEditForm />} />
+            <Route exact path="/tasks/:id/edit" render={() => <TaskEditForm />} />
             <Route render={() => <p>Page not found!</p>} />
         </Switch>
         

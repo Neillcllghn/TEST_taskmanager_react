@@ -12,7 +12,7 @@ function TaskItem({ id, task, profile_id, profile_image, owner }) {
     const history = useHistory()
 
     const handleEdit = () => {
-        history.push(`/tasks/${id}/edit`)
+        history.push(`/tasks/${id}/edit`);
     }
 
     const handleDelete = async () => {

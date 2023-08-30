@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import TaskItem from './TaskItem';
 import { Container } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import appStyles from "../../App.module.css"
 import Asset from '../../components/Assets';
 import TaskSearchBar from '../../components/TaskSearchBar';
@@ -14,6 +14,7 @@ function TaskList({message, filter=""}) {
     const [hasLoaded, setHasLoaded] = useState(false);
     const [query, setQuery] = useState("");
     const { pathname } = useLocation();
+    const history = useHistory();
 
     useEffect(() => {
         const fetchTasks = async () => {
@@ -46,6 +47,10 @@ function TaskList({message, filter=""}) {
         }
       })
 
+      const handleEditClick = (taskId) => {
+        history.push(`/tasks/${taskId}/edit`);
+     };
+
   return (
     <div>
         <h1>Task List</h1>
@@ -70,7 +75,9 @@ function TaskList({message, filter=""}) {
                 task={task}
                 profile_id={task.profile_id}
                 profile_image={task.profile_image}
-                owner={task.owner}/>))
+                owner={task.owner}
+                onEditClick={() => handleEditClick(task.id)}
+                />))
                 
                 ) : (
                     <Container className={appStyles.Content}>

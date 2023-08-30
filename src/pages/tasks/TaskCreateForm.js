@@ -13,7 +13,7 @@ import { Alert } from "react-bootstrap";
 
 
 
-function TaskCreateForm(props) {
+function TaskCreateForm() {
 
   const [errors, setErrors] = useState({});
 
@@ -52,6 +52,13 @@ const handleChange = (event) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
+    const now = new Date();
+    const PastDueDate = new Date(due_date);
+
+    if (PastDueDate < now) {
+        setErrors({ due_date: ["Cannot create tasks with past due dates"] });
+        return;
+    }
 
     formData.append('title', title);
     formData.append('category', category);
