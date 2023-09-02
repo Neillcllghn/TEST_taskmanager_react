@@ -80,7 +80,8 @@ function TaskEditForm() {
     
         try{
             await axiosReq.put(`/tasks/${id}`, formData);
-            history.push(`/tasklist`)
+            const successMessage = 'Task edited successfully!';
+            history.push(`/tasklist?success=${encodeURIComponent(successMessage)}`)
         } catch (err){
             console.log(err)
             if (err.response?.status !== 401){
@@ -90,7 +91,6 @@ function TaskEditForm() {
         }
     }
     
-
   return (
     <Row className={styles.TaskFormBox}>
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
@@ -183,6 +183,8 @@ function TaskEditForm() {
     </Form>
     </Container>
     </Row>
+    
+
   );
 }
 
