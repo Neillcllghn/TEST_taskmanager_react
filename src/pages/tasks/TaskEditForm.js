@@ -80,8 +80,11 @@ function TaskEditForm() {
     
         try{
             await axiosReq.put(`/tasks/${id}`, formData);
-            const successMessage = 'Task edited successfully!';
-            history.push(`/tasklist?success=${encodeURIComponent(successMessage)}`)
+            const successMessage = "Task edited Successfully";
+            const searchParams = new URLSearchParams();
+            searchParams.set('success', successMessage);
+            sessionStorage.setItem('successMessage', successMessage);
+            history.push(`/tasklist/?${searchParams.toString()}`)
         } catch (err){
             console.log(err)
             if (err.response?.status !== 401){

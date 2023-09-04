@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom.m
 import appStyles from "../../App.module.css"
 import Asset from '../../components/Assets';
 import TaskSearchBar from '../../components/TaskSearchBar';
-import styles from '../../styles/TaskList.module.css';
+import SuccessMessages from '../../components/SuccessMessages';
 
 
 function TaskList({message, filter=""}) {
@@ -17,7 +17,8 @@ function TaskList({message, filter=""}) {
     const { pathname } = useLocation();
     const history = useHistory();
     const location = useLocation();
-    const [successMessage, setSuccessMessage] = useState('');
+    const queryParams = new URLSearchParams(location.search);
+    const successMessage = queryParams.get('success');
 
 
     useEffect(() => {
@@ -55,17 +56,6 @@ function TaskList({message, filter=""}) {
         history.push(`/tasks/${taskId}/edit`);
      };
 
-     useEffect(() => {
-        const queryParams = new URLSearchParams(location.search);
-        const successMessage = queryParams.get('success');
-        if (successMessage) {
-            setSuccessMessage(successMessage);
-            setTimeout(() => {
-                setSuccessMessage('');
-              }, 3000);
-        }
-      }, [location.search]);
-
   return (
     <div>
         <h1>Task List</h1>
@@ -80,11 +70,7 @@ function TaskList({message, filter=""}) {
 
         <TaskSearchBar query={query} onQueryChange={setQuery} />
         {successMessage && (
-        <Container className={styles.success-message}>
-        <div className={`${styles.success-message} ${successMessage ? 'show' : ''}`}>
-        {successMessage}
-        </div>
-      </Container>
+            <SuccessMessages />
       )}
 
         {hasLoaded ? (
