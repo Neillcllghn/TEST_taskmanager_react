@@ -38,7 +38,9 @@ function TaskItem({ id, task, profile_id, profile_image, owner }) {
             Edit
             </Button>
 
-            <TaskDeleteModal id={id}/>
+            <TaskDeleteModal
+            id={id} 
+            />
             </span>
             </div>
             ) : (<p className="text-center">You are not the owner of this Task</p>)}

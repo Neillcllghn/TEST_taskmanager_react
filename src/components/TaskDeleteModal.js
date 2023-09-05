@@ -5,17 +5,25 @@ import { axiosRes } from '../api/axiosDefaults';
 
 function TaskDeleteModal({id}) {
     const [show, setShow] = useState(false);
+    const history = useHistory()
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const history = useHistory()
 
     const handleDelete = async () => {
+        console.log(`Deleting task with ID: ${id}`);
         try {
             await axiosRes.delete(`/tasks/${id}`);
+            console.log(`Task with ID: ${id} deleted successfully.`);
             history.push("/tasklist/");
+            setShow(false);
+            window.location.reload();
         } catch(err) {
             console.log(err);
+            if (err.response) {
+                console.log(`Error status code: ${err.response.status}`);
+                console.log(`Error data:`, err.response.data);
+            }
         }
     };
 
