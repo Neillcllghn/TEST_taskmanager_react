@@ -15,6 +15,10 @@ function TaskItem({ id, task, profile_id, profile_image, owner }) {
         history.push(`/tasks/${id}/edit`);
     }
 
+    if (!is_owner) {
+        return null;
+    }
+
   return (
     <Card>
         <Card.Body>
@@ -26,7 +30,6 @@ function TaskItem({ id, task, profile_id, profile_image, owner }) {
         </Media>
             <h3 className="text-center">{task.title}</h3>
             <p className="text-center">Owner: {task.owner}</p>
-            {is_owner ? (
             <div className="text-center">
             <p>Description: {task.description}</p>
             <p>Urgent: {task.is_urgent ? 'Yes' : 'No'}</p>
@@ -43,7 +46,6 @@ function TaskItem({ id, task, profile_id, profile_image, owner }) {
             />
             </span>
             </div>
-            ) : (<p className="text-center">You are not the owner of this Task</p>)}
         </Card.Body>
     </Card>
   )

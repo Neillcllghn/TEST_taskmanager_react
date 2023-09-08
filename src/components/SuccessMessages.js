@@ -19,6 +19,7 @@ function SuccessMessages() {
             searchParams.delete('success');
             const newURL = `${window.location.pathname}?${searchParams.toString()}`;
             window.history.replaceState({}, document.title, newURL);
+            window.location.reload();
             const timer = setTimeout(() => {
                 setDisplayedSuccessMessage('');
               }, 2000);

@@ -90,7 +90,8 @@ useEffect(() => {
     const fetchCategories = async () => {
         try {
             const { data } = await axiosReq.get(`/category/`)
-            setCategoryData(data)
+            const userCategories = data.results.filter(categoryItem => categoryItem.user_can_use);
+            setCategoryData({ results: userCategories });
         } catch(err) {
             console.log(err)
         }
