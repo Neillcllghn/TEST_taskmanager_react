@@ -5,14 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router} from 'react-router-dom'
 import { CurrentUserProvider } from './context/CurrentUserContext';
-import { ProfileDataProvider } from './context/ProfileDataContext';
+import { UserProfileProvider } from './context/UserProfileContext';
 
 ReactDOM.render(
     <Router>
     <CurrentUserProvider>
-        <ProfileDataProvider>
+      <UserProfileProvider>
             <App />
-        </ProfileDataProvider>
+    </UserProfileProvider>
     </CurrentUserProvider>
     </Router>,
   document.getElementById('root')

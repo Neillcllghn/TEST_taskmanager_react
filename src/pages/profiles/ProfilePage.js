@@ -11,39 +11,52 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from '../../context/CurrentUserContext';
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useUserProfile } from "../../context/UserProfileContext";
+import { Button, Image } from "react-bootstrap";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const {id} = useParams();
+  const { setUserProfile } = useUserProfile();
+
 
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const [{data: pageProfile}] = await Promise.all([
+            const [{data: userProfile}] = await Promise.all([
                 axiosReq.get(`/profiles/${id}/`)
             ])
+            setUserProfile(userProfile);
+            setHasLoaded(true);
         } catch(err){
-            console.log(err)
+            console.log("Fetching failed:", err)
         }
     }
-      setHasLoaded(true);
-  }, [])
+    fetchData();
+  }, [id, setUserProfile])
+
+  const userProfile = useUserProfile().userProfile;
 
   const mainProfile = (
     <>
+    {userProfile && (
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
-          <p>Image</p>
+          <Image 
+            className={styles.ProfileImage}
+            src={userProfile?.image}
+            roundedCircle
+          />
         </Col>
         <Col lg={6}>
-          <h3 className="m-2">Profile username</h3>
-          <p>Profile stats</p>
+          <h3 className="m-2">{userProfile?.owner}</h3>
         </Col>
-        <Col className="p-3">Profile content</Col>
+        <Col className="p-3">{userProfile?.content}</Col>
       </Row>
+      )}
     </>
   );
 
