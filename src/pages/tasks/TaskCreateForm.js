@@ -88,17 +88,18 @@ const handleChange = (event) => {
 
 useEffect(() => {
     const fetchCategories = async () => {
-        try {
-            const { data } = await axiosReq.get(`/category/`)
-            const userCategories = data.results.filter(categoryItem => categoryItem.user_can_use);
+        try {const response = await axiosReq.get(`/category/`);
+            const userCategories = response.data.results.filter(categoryItem => categoryItem.is_owner);
             setCategoryData({ results: userCategories });
+            
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     }
     fetchCategories();
 }, []);
 
+console.log(categoryData.results)
   return (
     <Row className={styles.TaskFormBox}>
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
@@ -124,11 +125,15 @@ useEffect(() => {
             value={category}
             onChange={handleChange}>
             <option value="">--Please choose an option--</option>
-                {categoryData.results.map((categoryItem) => (
+            {categoryData.results.length === 0 ? (
+            <option value="" disabled>Loading categories...</option>
+            ) : (
+                categoryData.results.map((categoryItem) => (
                 <option key={categoryItem.id} value={categoryItem.id}>
                 {categoryItem.category_title}
             </option>
-        ))}
+             ))
+            )}
             </Form.Control>
             </Form.Group>
         {errors.category?.map((message, idx) =>
