@@ -99,7 +99,6 @@ useEffect(() => {
     fetchCategories();
 }, []);
 
-console.log(categoryData.results)
   return (
     <Row className={styles.TaskFormBox}>
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
