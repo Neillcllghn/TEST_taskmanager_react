@@ -53,20 +53,11 @@ function TaskList({message, filter=""}) {
       }, [showCompleted, showNonCompleted, showIs_Urgent, query, pathname]);
 
       const filteredTasks = tasks.filter((task) => {
-        if (!showCompleted && task.completed) {
-            return false;
-        }
-        if (!showNonCompleted && !task.completed) {
-            return false;
-        }
-        if (showIs_Urgent && !task.is_urgent) {
-            if (showIs_Urgent && task.completed) {
-              return false;
-            } else if (showIs_Urgent && !task.completed) {
-              return false;
-            }
-        }
-        return showCompleted || showNonCompleted || showIs_Urgent;
+        const isUrgent = showIs_Urgent ? task.is_urgent : true;
+        const isCompleted = showCompleted ? task.completed : true;
+        const isNonCompleted = showNonCompleted ? !task.completed : true;
+
+        return isUrgent && isCompleted && isNonCompleted;
       })
 
   return (
