@@ -23,13 +23,13 @@ function TaskList({message, filter=""}) {
         const fetchTasks = async () => {
           try {
             let filter = '';
-            if (showCompleted) {
+            if (showIs_Urgent) {
+                filter = 'urgent';
+            } if (showCompleted) {
                 filter = 'completed';
             } else if (showNonCompleted) {
                 filter = 'not_completed';
-            } else if (showIs_Urgent) {
-                filter = 'urgent';
-              }
+            }
             const { data } = await axiosReq.get(
                 `/tasks/?filter=${filter}&search=${query}`
                 );
@@ -53,16 +53,20 @@ function TaskList({message, filter=""}) {
       }, [showCompleted, showNonCompleted, showIs_Urgent, query, pathname]);
 
       const filteredTasks = tasks.filter((task) => {
-        if (showCompleted && task.completed) {
-            return true;
+        if (!showCompleted && task.completed) {
+            return false;
         }
-        if (showNonCompleted && !task.completed) {
-            return true;
+        if (!showNonCompleted && !task.completed) {
+            return false;
         }
-        if (showIs_Urgent && task.is_urgent) {
-            return true;
+        if (showIs_Urgent && !task.is_urgent) {
+            if (showIs_Urgent && task.completed) {
+              return false;
+            } else if (showIs_Urgent && !task.completed) {
+              return false;
+            }
         }
-        return false;
+        return showCompleted || showNonCompleted || showIs_Urgent;
       })
 
   return (
@@ -99,8 +103,6 @@ function TaskList({message, filter=""}) {
                 checked={showIs_Urgent}
                 onChange={() => {
                     setShowIs_Urgent(!showIs_Urgent);
-                    setShowCompleted(false);
-                    setShowNonCompleted(false);
                   }}
             />
             </label>
