@@ -92,14 +92,14 @@ const NavBar = () => {
                  TASKMASTER
             </Navbar.Brand>
         </NavLink>
-        {currentUser && createTaskIcon}
-        {currentUser && createCategoryIcon}
     <Navbar.Toggle 
     ref={ref}
     onClick={() => setExpanded(!expanded)}
     aria-controls="basic-navbar-nav" 
     />
     <Navbar.Collapse id="basic-navbar-nav">
+    {currentUser && createTaskIcon}
+    {currentUser && createCategoryIcon}
         <Nav className="ml-auto">
             <NavLink exact
             className={styles.NavLink} 
