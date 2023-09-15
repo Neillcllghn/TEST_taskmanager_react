@@ -11,19 +11,13 @@ function CategoryDeleteModal({ id }) {
     const handleShow = () => setShow(true);
 
     const handleDelete = async () => {
-        console.log(`Deleting Category with ID: ${id}`);
         try {
             await axiosRes.delete(`category/${id}`);
-            console.log(`Category with ID: ${id} deleted successfully.`);
             history.push("/categorieslist");
             handleClose();
             window.location.reload();
         } catch(err) {
             console.log(err);
-            if (err.response) {
-                console.log(`Error status code: ${err.response.status}`);
-                console.log(`Error data:`, err.response.data);
-            }
         }
     };
   return (

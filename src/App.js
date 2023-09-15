@@ -14,6 +14,7 @@ import TaskList from "./pages/tasks/TaskList";
 import TaskEditForm from "./pages/tasks/TaskEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import HomePage from "./pages/main/HomePage";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/tasklist/" render={() => <TaskList message="No Results found......" />} />
             <Route exact path="/tasks/:id/edit" render={() => <TaskEditForm />} />
             <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+            <Route exact path="//profiles/:id/edit" render={() => <ProfileEditForm />} />
             <Route render={() => <p>Page not found!</p>} />
         </Switch>
         

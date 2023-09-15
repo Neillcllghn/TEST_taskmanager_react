@@ -15,12 +15,15 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useUserProfile } from "../../context/UserProfileContext";
 import { Button, Image } from "react-bootstrap";
+import ProfileEditForm from "./ProfileEditForm";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const {id} = useParams();
   const { setUserProfile } = useUserProfile();
+  const [showProfileEditForm, setShowProfileEditForm] = useState(false);
+
 
 
   useEffect(() => {
@@ -40,6 +43,10 @@ function ProfilePage() {
 
   const userProfile = useUserProfile().userProfile;
 
+  const handleEditProfileClick = () => {
+    setShowProfileEditForm(true);
+  }
+
   const mainProfile = (
     <>
     {userProfile && (
@@ -54,7 +61,7 @@ function ProfilePage() {
         <Col lg={6}>
           <h3 className="m-2">{userProfile?.owner}</h3>
         </Col>
-        <Col className="p-3">{userProfile?.content}</Col>
+        <Col className="p-3">Content: {userProfile?.content}</Col>
       </Row>
       )}
     </>
@@ -67,6 +74,8 @@ function ProfilePage() {
           {hasLoaded ? (
             <>
             {mainProfile}
+            <Button className={`${btnStyles.Button}`} onClick={handleEditProfileClick}>Edit Profile</Button>
+            {showProfileEditForm && <ProfileEditForm />}
             </>
           ) : (
             <Assets spinner />
