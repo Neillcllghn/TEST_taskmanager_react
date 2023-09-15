@@ -47,6 +47,10 @@ function ProfilePage() {
     setShowProfileEditForm(true);
   }
 
+  const handleCancelEdit = () => {
+    setShowProfileEditForm(false);
+  }
+
   const mainProfile = (
     <>
     {userProfile && (
@@ -75,7 +79,7 @@ function ProfilePage() {
             <>
             {mainProfile}
             <Button className={`${btnStyles.Button}`} onClick={handleEditProfileClick}>Edit Profile</Button>
-            {showProfileEditForm && <ProfileEditForm />}
+            {showProfileEditForm && <ProfileEditForm onCancel={handleCancelEdit}/>}
             </>
           ) : (
             <Assets spinner />

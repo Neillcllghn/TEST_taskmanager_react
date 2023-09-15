@@ -15,7 +15,7 @@ import appStyles from "../../App.module.css";
 
 
 
-function ProfileEditForm() {
+function ProfileEditForm({ onCancel }) {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
     const {id} = useParams();
@@ -30,6 +30,12 @@ function ProfileEditForm() {
 
     const { name, content, image} = userProfileData;
     const [errors, setErrors] = useState({});
+
+    const handleCancel = () => {
+        if(onCancel) {
+            onCancel();
+        }
+    }
 
     useEffect(() => {
         const handleMount = async () => {
@@ -110,7 +116,7 @@ function ProfileEditForm() {
     <Form onSubmit={handleSubmit}>
         <Button
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
-            onClick={() => history.goBack()}
+            onClick={handleCancel}
           >
             cancel
           </Button>
