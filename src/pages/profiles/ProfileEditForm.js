@@ -13,8 +13,6 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 
-
-
 function ProfileEditForm({ onCancel }) {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
@@ -81,7 +79,6 @@ function ProfileEditForm({ onCancel }) {
             ...currentUser,
             profile_image: data.image,
           }));
-          history.goBack();
         } catch (err) {
           console.log(err);
           setErrors(err.response?.data);
@@ -106,7 +103,7 @@ function ProfileEditForm({ onCancel }) {
               {message}
             </Alert>
           ))}
-          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+          <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={handleSubmit}>
             save
           </Button>
         </>
@@ -118,7 +115,7 @@ function ProfileEditForm({ onCancel }) {
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
             onClick={handleCancel}
           >
-            cancel
+            Close Form
           </Button>
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
@@ -144,6 +141,7 @@ function ProfileEditForm({ onCancel }) {
               </div>
               <Form.File
                 id="image-upload"
+                style={{ display: 'none'}}
                 ref={imageFile}
                 accept="image/*"
                 onChange={(e) => {
@@ -155,6 +153,9 @@ function ProfileEditForm({ onCancel }) {
                   }
                 }}
               />
+            <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+                save
+            </Button>
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
