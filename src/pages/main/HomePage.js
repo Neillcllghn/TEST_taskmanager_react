@@ -1,20 +1,18 @@
 import React from 'react'
-import { Container } from 'react-bootstrap';
-import { useCurrentUser, useSetCurrentUser } from '../../context/CurrentUserContext'
+import { useCurrentUser } from '../../context/CurrentUserContext'
+import { useUserProfile } from "../../context/UserProfileContext";
+import HomeLoggedOut from '../../components/HomeLoggedOut';
+import HomeLoggedIn from '../../components/HomeLoggedIn';
 
 const HomePage = () => {
     const currentUser = useCurrentUser();
-    const setCurrentUser = useSetCurrentUser();
+    const { userProfile } = useUserProfile();
 
-    const homeLoggedOut = 
-        <>
-        <div>HomePage</div>
-        </>
 
   return (
-    <Container>
-        {currentUser && homeLoggedOut}
-    </Container>
+    <div>
+        {!currentUser ? <HomeLoggedOut /> : userProfile ? <HomeLoggedIn userProfile={userProfile}/> : <p>Loading...</p>}
+    </div>
   )
 }
 
