@@ -18,7 +18,9 @@ const HomeLoggedOut = () => {
     </Col>
     <Col className="my-auto p-0 p-md-2" lg={6}>
       <Container className={`${appStyles.Content} p-4 `}>
-        <h1>Home Page</h1>
+        <h1>What is TaskMaster?!</h1>
+        <p>You can sign up or log in to create categories and tasks.</p>
+        <p>You can also update your profile by adding an image or changing your username.</p>
       </Container>
     </Col>
   </Row>
