@@ -17,8 +17,9 @@ const HomeLoggedIn = ({ userProfile, incompleteTaskCount, urgentTaskCount }) => 
     </Col>
     <Col className="my-auto p-0 p-md-2" lg={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-        <p>You have {incompleteTaskCount} tasks not completed.</p>
-        <p>You have {urgentTaskCount} urgent tasks.</p>
+            <h1>Number of Tasks outstanding!</h1>
+        <p>You have <span style={{ fontWeight: 'bold' }}>{incompleteTaskCount}</span> tasks not completed.</p>
+        <p>You have <span style={{ fontWeight: 'bold' }}>{urgentTaskCount}</span> urgent tasks.</p>
         </Container>
     </Col>
 </Row>
