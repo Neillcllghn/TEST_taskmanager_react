@@ -104,7 +104,6 @@ useEffect(() => {
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
     <Form onSubmit={handleSubmit}>
         <Form.Group>
-            <Form.Label>Task Title</Form.Label>
             <Form.Control
             type="text" 
             placeholder="Enter Task Title" 
@@ -117,13 +116,12 @@ useEffect(() => {
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
         <Form.Group>
-            <Form.Label>Category</Form.Label>
             <Form.Control
             as="select"
             name ="category"
             value={category}
             onChange={handleChange}>
-            <option value="">--Please choose an option--</option>
+            <option value="">--Please choose a Category--</option>
             {categoryData.results.length === 0 ? (
             <option value="" disabled>Loading categories...</option>
             ) : (
@@ -139,9 +137,8 @@ useEffect(() => {
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
         <Form.Group>
-            <Form.Label>Task Description</Form.Label>
             <Form.Control
-            type="text" 
+            as="textarea" 
             placeholder="Enter Task description" 
             name ="description"
             value={description}
@@ -153,7 +150,7 @@ useEffect(() => {
         )}
         <Form.Group>
             <Form.Check
-            label="Urgent"
+            label="Mark as Urgent"
             type="checkbox" 
             name ="is_urgent"
             value="true"

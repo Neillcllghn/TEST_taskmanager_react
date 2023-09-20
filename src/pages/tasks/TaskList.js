@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosReq } from '../../api/axiosDefaults';
 import TaskItem from './TaskItem';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import appStyles from "../../App.module.css"
 import Asset from '../../components/Assets';
@@ -102,7 +102,8 @@ function TaskList({message, filter=""}) {
         <TaskSearchBar query={query} onQueryChange={setQuery} />
         {useLocation().search.includes('success=') && <SuccessMessages />}
     
-
+        <Row>
+            <Container>
         {hasLoaded ? (
         <>
             {tasks.length ? (
@@ -127,6 +128,8 @@ function TaskList({message, filter=""}) {
                  <Asset spinner />
             </Container>
         )}
+        </Container>
+        </Row>
     </div>
   )
 }
