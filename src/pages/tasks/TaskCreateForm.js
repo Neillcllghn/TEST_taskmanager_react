@@ -104,23 +104,27 @@ useEffect(() => {
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
     <Form onSubmit={handleSubmit}>
         <Form.Group>
+        <Form.Label className={styles.Header}>Task Title</Form.Label>
             <Form.Control
             type="text" 
             placeholder="Enter Task Title" 
             name ="title"
             value={title}
             onChange={handleChange}
+            className={styles.TaskFormControl}
             />
         </Form.Group>
         {errors.title?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
         <Form.Group>
+        <Form.Label className={styles.Header}>Categories</Form.Label>
             <Form.Control
             as="select"
             name ="category"
             value={category}
-            onChange={handleChange}>
+            onChange={handleChange}
+            className={styles.TaskFormControl}>
             <option value="">--Please choose a Category--</option>
             {categoryData.results.length === 0 ? (
             <option value="" disabled>Loading categories...</option>
@@ -137,18 +141,22 @@ useEffect(() => {
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
         <Form.Group>
+        <Form.Label className={styles.Header}>Task Description</Form.Label>
             <Form.Control
             as="textarea" 
             placeholder="Enter Task description" 
             name ="description"
             value={description}
             onChange={handleChange}
+            className={styles.TaskFormControl}
             />
         </Form.Group>
         {errors.description?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
         <Form.Group>
+            <div classname={styles.CheckboxWrapper}>
+                <label>Urgent</label>
             <Form.Check
             label="Mark as Urgent"
             type="checkbox" 
@@ -157,29 +165,22 @@ useEffect(() => {
             checked={is_urgent}
             onChange={handleChange}
             />
+            </div>
         </Form.Group>
         <Form.Group>
-            <Form.Label>Task Due Date</Form.Label>
+            <Form.Label className={styles.Header}>Task Due Date</Form.Label>
             <Form.Control
             type="date" 
             name ="due_date"
             value={due_date}
             ref= {dateInputRef}
             onChange={handleChange}
+            className={styles.TaskFormControl}
             />
         </Form.Group>
         {errors.due_date?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        {/* <Form.Group>
-            <Form.Check
-            label="Completed"
-            type="checkbox" 
-            name ="completed"
-            value={completed}
-            onChange={handleChange}
-            />
-        </Form.Group> */}
 
         <Button 
          type="submit" color="success" className={styles.TaskCreateBtn}>

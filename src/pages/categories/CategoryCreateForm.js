@@ -47,6 +47,7 @@ function CategoryCreateForm() {
         <Container className='col-md-6 col-sma-10 mx-auto p-0'>
         <Form onSubmit={handleSubmit}>
             <Form.Group>
+        <Form.Label className={styles.Header}>Category Creation</Form.Label>
             <Form.Control
             type="text" 
             placeholder="Enter a Category Title" 

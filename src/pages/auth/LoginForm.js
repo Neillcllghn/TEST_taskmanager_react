@@ -45,7 +45,7 @@ function LoginForm() {
 
   return (
     <Row className={styles.Row}>
-      <Col className="my-auto p-0 p-md-8" lg={10}>
+      <Col className="my-auto p-0 p-md-1" lg={10}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>Login</h1>
           

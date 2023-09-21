@@ -87,7 +87,7 @@ const NavBar = () => {
             </>
 
   return (
-    <Navbar expanded={expanded} className={styles.NavBar} expand="sm" fixed="top">
+    <Navbar expanded={expanded} className={styles.NavBar} expand="lg" fixed="top">
     <Container>
         <NavLink to="/">
             <Navbar.Brand className={styles.NavBarBrand}>
@@ -98,6 +98,7 @@ const NavBar = () => {
     ref={ref}
     onClick={() => setExpanded(!expanded)}
     aria-controls="basic-navbar-nav" 
+    className={styles.NavBarToggle}
     />
     <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
