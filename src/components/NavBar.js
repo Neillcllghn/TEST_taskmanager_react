@@ -42,6 +42,8 @@ const NavBar = () => {
 
     const loggedInIcons = 
             <> 
+                {createTaskIcon}
+                {createCategoryIcon}
                 <NavLink 
                     className={styles.NavLink} 
                     activeClassName={styles.Active} 
@@ -85,7 +87,7 @@ const NavBar = () => {
             </>
 
   return (
-    <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top">
+    <Navbar expanded={expanded} className={styles.NavBar} expand="sm" fixed="top">
     <Container>
         <NavLink to="/">
             <Navbar.Brand className={styles.NavBarBrand}>
@@ -98,8 +100,6 @@ const NavBar = () => {
     aria-controls="basic-navbar-nav" 
     />
     <Navbar.Collapse id="basic-navbar-nav">
-    {currentUser && createTaskIcon}
-    {currentUser && createCategoryIcon}
         <Nav className="ml-auto">
             <NavLink exact
             className={styles.NavLink} 
