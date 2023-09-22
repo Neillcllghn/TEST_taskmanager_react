@@ -55,10 +55,14 @@ const handleChange = (event) => {
     const now = new Date();
     const PastDueDate = new Date(due_date);
 
-    if (PastDueDate < now) {
-        setErrors({ due_date: ["Cannot create tasks with past due dates"] });
+    if (!due_date || PastDueDate < now) {
+        if (!due_date) {
+          setErrors({ due_date: ["You must select a Date"] });
+        } else {
+          setErrors({ due_date: ["Cannot create tasks with past due dates"] });
+        }
         return;
-    }
+      }
 
     formData.append('title', title);
     formData.append('category', category);
@@ -137,8 +141,8 @@ useEffect(() => {
             )}
             </Form.Control>
             </Form.Group>
-        {errors.category?.map((message, idx) =>
-            <Alert variant="warning" key={idx}>{message}</Alert>
+        {errors.category?.map((idx) =>
+            <Alert variant="warning" key={idx}><span>You must select a Category</span></Alert>
         )}
         <Form.Group>
         <Form.Label className={styles.Header}>Task Description</Form.Label>
@@ -155,8 +159,6 @@ useEffect(() => {
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
         <Form.Group>
-            <div classname={styles.CheckboxWrapper}>
-                <label>Urgent</label>
             <Form.Check
             label="Mark as Urgent"
             type="checkbox" 
@@ -165,7 +167,6 @@ useEffect(() => {
             checked={is_urgent}
             onChange={handleChange}
             />
-            </div>
         </Form.Group>
         <Form.Group>
             <Form.Label className={styles.Header}>Task Due Date</Form.Label>

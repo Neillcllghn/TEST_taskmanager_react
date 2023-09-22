@@ -64,6 +64,11 @@ function TaskEditForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (!category) {
+            setErrors({ category: ["You must select a Category"] });
+            return;
+          }
+
         const formData = new FormData();
     
         formData.append('title', title);
