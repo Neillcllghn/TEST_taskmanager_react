@@ -1,11 +1,20 @@
 .TaskFormBox {
-    height: calc(92vh - 60px);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     min-width: 100%;
     border: 2px solid #008B8B;
     background-color: #ffffff;
     margin: 0vw;
     padding: 5vw ;
     position:relative; 
+}
+
+.ErrorMessagesContainer {
+    margin-top: auto;
+    max-height: 100px;
+    overflow-y: auto;
 }
 
 .Header {
@@ -57,30 +66,3 @@
     background-color: linen;
 }
 
-.CheckboxWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-  }
-  
-  .CheckboxWrapper label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 0.5em;
-  }
-  
-  .CheckboxWrapper input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 1.6em;
-    height: 1.6em;
-    border-radius: 0.15em;
-    margin-right: 0.5em;
-    border: 0.15em solid #007a7e;
-    outline: none;
-  }
-
-  .CheckboxWrapper input[type="checkbox"]:checked {
-    background-color: #007a7e;
-  }

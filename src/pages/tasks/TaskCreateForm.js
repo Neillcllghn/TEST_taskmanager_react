@@ -10,9 +10,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "react-bootstrap";
 
-
-
-
 function TaskCreateForm() {
 
   const [errors, setErrors] = useState({});
@@ -26,7 +23,7 @@ function TaskCreateForm() {
     completed: false,
   });
 
-  const [categoryData, setCategoryData] = useState({ results: [] })
+  const [categoryData, setCategoryData] = useState({ results: [] });
 
   const { title, category, description, is_urgent, due_date, completed } = taskData;
   const history = useHistory();
@@ -103,9 +100,10 @@ useEffect(() => {
     fetchCategories();
 }, []);
 
+
   return (
     <Row className={styles.TaskFormBox}>
-        <Container className='col-md-6 col-sma-10 mx-auto p-0'>
+        <Container className={`col-md-6 col-sma-10 mx-auto p-0 `}>
     <Form onSubmit={handleSubmit}>
         <Form.Group>
         <Form.Label className={styles.Header}>Task Title</Form.Label>
@@ -118,9 +116,11 @@ useEffect(() => {
             className={styles.TaskFormControl}
             />
         </Form.Group>
+        <div className={styles.ErrorMessagesContainer}>
         {errors.title?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
+        </div>
         <Form.Group>
         <Form.Label className={styles.Header}>Categories</Form.Label>
             <Form.Control
@@ -141,9 +141,11 @@ useEffect(() => {
             )}
             </Form.Control>
             </Form.Group>
+            <div className={styles.ErrorMessagesContainer}>
         {errors.category?.map((idx) =>
             <Alert variant="warning" key={idx}><span>You must select a Category</span></Alert>
         )}
+        </div>
         <Form.Group>
         <Form.Label className={styles.Header}>Task Description</Form.Label>
             <Form.Control
@@ -155,9 +157,11 @@ useEffect(() => {
             className={styles.TaskFormControl}
             />
         </Form.Group>
+        <div className={styles.ErrorMessagesContainer}>
         {errors.description?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
+        </div>
         <Form.Group>
             <Form.Check
             label="Mark as Urgent"
@@ -179,10 +183,11 @@ useEffect(() => {
             className={styles.TaskFormControl}
             />
         </Form.Group>
+        <div className={styles.ErrorMessagesContainer}>
         {errors.due_date?.map((message, idx) =>
             <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-
+        </div>
         <Button 
          type="submit" color="success" className={styles.TaskCreateBtn}>
             Create
