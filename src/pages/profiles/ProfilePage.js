@@ -26,7 +26,6 @@ function ProfilePage() {
   const [showUserPasswordForm, setShowUserPasswordForm] = useState(false);
 
 
-
   useEffect(() => {
     const fetchData = async () => {
         try {
@@ -68,6 +67,7 @@ function ProfilePage() {
     setShowUserPasswordForm(false);
   }
 
+
   const mainProfile = (
     <>
     {userProfile && (
@@ -85,7 +85,45 @@ function ProfilePage() {
         <Col className="p-3">Content: {userProfile?.content}</Col>
       </Row>
       )}
+
+<div className={`${styles.BtnDiv}`}>
+      <div className={`${styles.BtnPair}`}>
+        <Button className={`${styles.EditProfileBtn}`} onClick={handleEditProfileClick}>
+          Edit Profile
+        </Button>
+        {showProfileEditForm && (
+          <Button 
+          className={`${styles.CloseFormBtn}`} 
+          onClick={handleCancelEdit}>
+            Close Edit Profile
+          </Button>
+        )}
+      </div>
+      <div className={`${styles.BtnPair}`}>
+        <Button className={`${styles.EditUsernameBtn}`} onClick={handleUsernameFormClick}>
+          Edit Username
+        </Button>
+        {showUsernameForm && (
+          <Button className={`${styles.CloseFormBtn}`} onClick={handleCloseUsernameForm}>
+            Close Edit Username
+          </Button>
+        )}
+      </div>
+      <div className={`${styles.BtnPair}`}>
+        <Button className={`${styles.EditUserPasswordBtn}`} onClick={handleUserPasswordFormClick}>
+          Edit Password
+        </Button>
+        {showUserPasswordForm && (
+          <Button className={`${styles.CloseFormBtn}`} onClick={handleCloseUserPasswordForm}>
+            Close Edit Password
+          </Button>
+        )}
+      </div>
+    </div>
+
     </>
+
+    
   );
 
 
@@ -95,16 +133,9 @@ function ProfilePage() {
           {hasLoaded ? (
             <>
             {mainProfile}
-            <div className={`${styles.BtnDiv}`}>
-            <Button className={`${styles.EditProfileBtn}`} onClick={handleEditProfileClick}>Edit Profile</Button>
             {showProfileEditForm && <ProfileEditForm onCancel={handleCancelEdit}/>}
-            <Button className={`${styles.EditUsernameBtn}`} onClick={handleUsernameFormClick}>
-                Edit Username
-            </Button>
             {showUsernameForm && <UsernameForm onCancel={handleCloseUsernameForm}/>}
-            <Button className={`${styles.EditUserPasswordBtn}`} onClick={handleUserPasswordFormClick}>Edit Password</Button>
             {showUserPasswordForm && <UserPasswordForm onCancel={handleCloseUserPasswordForm}/>}
-            </div>
             </>
           ) : (
             <Assets spinner />
