@@ -134,7 +134,7 @@ Colour scheme used was adopted from the [React-Bootstrap](https://react-bootstra
 
 ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/e6a77d87-08e4-4711-84e3-3d2fe9e46198)
 
-- The Edit and Delete Buttons are green (to notify user that this is to edit) and red (which is suitable warning user that this is a delete button):
+- The Edit and Delete Buttons are green (to notify user that this is to edit and same as the Navigation Bar colors) and red (which is suitable warning user that this is a delete button):
 
 ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/dcd7e42d-65b4-477d-9542-efb21d68b966)
 
@@ -145,16 +145,13 @@ Colour scheme used was adopted from the [React-Bootstrap](https://react-bootstra
 
 ### Typography
 
-The Font used is lato & Merriweather which is easy to read and easy on the eye.
+The Font used is Poppins as it is well rounded, widely popular font that is suitable for both heading and body text.
 
 - - -
 
 ### Imagery
 
-I did not use much imagery only the picture of the Burger on the Home page which gives the page the impression to the user that this is a resturant with good food.
-
-![image](https://user-images.githubusercontent.com/109948740/235203591-5bd54567-1b0e-4390-bee5-a618975abedb.png)
-
+I did not use any imagery at this time but will do so in later developments in the future
 
 - - -
 
@@ -163,24 +160,18 @@ I did not use much imagery only the picture of the Burger on the Home page which
 I decided to draw the website in both Desktop and Mobile view as this is how I planned out my project from the begining:
 
 #### Desktop view:
-- Home Page (Not logged in)
-
- ![image](https://user-images.githubusercontent.com/109948740/235210490-de5c6e84-fbfb-4893-ad04-1d0d40faeac8.png)
+- Home Page:
 
 
-- Home Page (When logged in):
 
- ![image](https://user-images.githubusercontent.com/109948740/235210775-821cc0c6-1442-4647-b264-2186c2d19a5f.png)
+- Make TaskList Page:
 
+- Your CategoryList Form Page:
 
-- Make a Booking Page:
-
- ![image](https://user-images.githubusercontent.com/109948740/235210930-81e0fdd5-6cac-4fe7-b0c2-74025305d09e.png)
+- Your Task Create Form Page:
 
 
-- Your Bookings Page:
-
- ![image](https://user-images.githubusercontent.com/109948740/235211106-a71a3600-0b06-4ea3-b944-132dca0cb741.png)
+- Your Category Create Form Page:
 
 - - -
 
@@ -188,39 +179,38 @@ I decided to draw the website in both Desktop and Mobile view as this is how I p
 
 - Home Page:
 
-![image](https://user-images.githubusercontent.com/109948740/235211523-18accd6f-4932-4e90-8537-ec3dd7c1bbf7.png) 
 
 
-- Make a Booking Page:
+- Make TaskList Page:
 
- ![image](https://user-images.githubusercontent.com/109948740/235211631-b6093750-422f-43fb-bfd1-09eda9abcba1.png)
+- Your CategoryList Form Page:
+
+- Your Task Create Form Page:
 
 
-- Your Bookings Page:
+- Your Category Create Form Page:
 
- ![image](https://user-images.githubusercontent.com/109948740/235211870-535c9526-c258-4e52-813a-0fb03c28b009.png)
 
 
 - - -
 
 ## Features
 
-The website is comprised of a home page, login, register and sign out pages, a booking page, an update bookings page and a Your Bookings page.
+The website is comprised of a home page, login, Sign up, a Task and Category Create form page, an Task edit and Category Edit page and a Task and Category List page, Profile page.
 
 All Pages on the website are responsive and have:
 
 - The title of the site at the top of every page. This title also acts as a link back to the home page.
-![image](https://user-images.githubusercontent.com/109948740/234081436-51b304c9-8f15-40bb-a40c-e52def0e926d.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/2389c4c9-d328-445f-800e-e8f56fb7fafb)
 
 - The Buttons will highlight when the cursor is hovering over them, This is to indicate to the user that this button is the one that is being selected:
 
 When Button is not highlighted:
-
-![image](https://user-images.githubusercontent.com/109948740/234083160-55a69603-b4bb-4f03-bd84-e797d6f93c4f.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/b6b2585d-aaa5-47d4-94e0-db016b1f996f)
 
 When Button is highlighted:
 
-![image](https://user-images.githubusercontent.com/109948740/234083620-b09e5077-ac13-4d97-b97c-aac9d73fa55d.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/0a087530-551e-4089-9ddf-cb5e226048e3)
 
 - - -
 
@@ -366,7 +356,7 @@ The final part to the bookings page is the delete function which is indicated to
 ## Technologies Used
 
 ### Languages Used:
-HTML, CSS, javascript and Python Django were used to create this website.
+HTML, CSS, javascript and Python Django (backend) were used to create this website.
 
 ### Frameworks, Libraries & Programs Used:
 
@@ -374,7 +364,7 @@ Git - For version control.
 
 Github - To save and store the files for the website.
 
-Materialize CSS Version 1.0 - The framework for the website. Code for the navigation bar, collapsible for the menu, cards and form were used and modified. Additional CSS styling was also implemented in style.css.
+React-Bootstrap Version 4.6 - The framework for the website. Code for the navigation bar, containers, rows and forms were used and modified. Additional CSS styling was also implemented in style.css.
 
 Google Fonts - To import the fonts used on the website.
 
@@ -384,9 +374,9 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 [Responsive Viewer Chrome Extension](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) - To show the website image on a range of devices.
 
-[Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad=1&gclid=EAIaIQobChMI0sPw_5fI_gIVqujtCh229gdBEAAYASAAEgL7YvD_BwE) - To easily upload images and videos to the cloud and automate smart manipulations of those media without installing any other software.
+[Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad=1&gclid=EAIaIQobChMI0sPw_5fI_gIVqujtCh229gdBEAAYASAAEgL7YvD_BwE) - To easily upload images and videos to the cloud and automate smart manipulations of those media without installing any other software (Backend- Django React Framework).
 
-[ElephantSQL](https://www.elephantsql.com/) - To install and manage PostgreSQL database.
+[ElephantSQL](https://www.elephantsql.com/) - To install and manage PostgreSQL database (Backend- Django React Framework).
 
 - - -
 
@@ -419,7 +409,7 @@ The site has now been deployed.
 To fork the Tablefor2 repository:
 
 1. Log in (or sign up) to Github.
-2. Go to the repository for this project, [Neillcllghn/Tablefor2](https://github.com/Neillcllghn/Tablefor2)
+2. Go to the repository for this project, [Neillcllghn/taskmaster_react](https://github.com/Neillcllghn/taskmaster_react)
 3. Click the Fork button in the top right corner.
 
 #### How to Clone
@@ -427,7 +417,7 @@ To fork the Tablefor2 repository:
 To clone the repository:
 
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, [Neillcllghn/Tablefor2](https://github.com/Neillcllghn/Tablefor2)
+2. Go to the repository for this project, [Neillcllghn/taskmaster_react](https://github.com/Neillcllghn/taskmaster_react)
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
@@ -436,7 +426,7 @@ To clone the repository:
 
 ## Testing
 
-Please see [TESTING.md](https://github.com/Neillcllghn/Tablefor2/blob/main/TESTING.md) for all testing performed
+Please see [TESTING.md]() for all testing performed
 
 - - -
 
@@ -444,17 +434,13 @@ Please see [TESTING.md](https://github.com/Neillcllghn/Tablefor2/blob/main/TESTI
 
 ### Code Used:
 
-1. The sign-up submit button was inspired by a Youtube video titled: [CSS Button Hover Animation Effects using Only HTML & CSS.](https://www.youtube.com/watch?v=zPcvAwp71uA)
+1. The code used in project (with regards the TaskList edit and delete buttons) was in part inspired by what was from the Youtube video titled: [Part 2 Frontend Design I Task Manager App with React (JS) + Django (Python)](https://www.youtube.com/watch?v=Hc-sRIGWJY8)
 
-2. The messages css and coding used was from the Youtube video titled: [Django user login form and django messages.](https://www.youtube.com/watch?v=3c9eywCcRG4)
-
-3. The forms.py Clean function and error messages for the Bookings page was inspired by Youtube video titled: [Django forms | How to create beautiful forms in django with materialize css](https://www.youtube.com/watch?v=qte0MSKClVM)
-
-4. Inspriation in regards the views.py code came from Code Institute walkthrough projects Hello Django, Taskmanager, and I think Therefore I Blog
+2. The various leactures and notes - Code Institute walkthrough project React Frontend Walkthrough on the Moments was of great benefit and was the foundation for this project.
 
 ### Content:
 
-1. The format of the `Make a booking` page was inspired by an article written by John Abdsho Khosrowabadi - [Django Tutorial On How To Create A Booking System For A Health Clinic.](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78)
+1. The Code Institute walkthrough project Moments was of great inspiration with regards the profiles, and Navigation bar
 
 2. All other content for the site, such as menu, booking form and instructions etc. were written by myself.
 
@@ -462,9 +448,7 @@ Please see [TESTING.md](https://github.com/Neillcllghn/Tablefor2/blob/main/TESTI
 
 ### Media:
 
-1. The images of the burger came from [Unsplash](https://unsplash.com/).
-
-2. The icons in the footer in all pages of the website were taken from [Font Awesome.](https://fontawesome.com/)
+1. The icons in the Navigation bar were taken from [Font Awesome.](https://fontawesome.com/)
 
 - - -
 
@@ -474,5 +458,4 @@ I would like to acknowledge the following people:
 
 - Jubril Akolade - My Code Institute Mentor.
 - The Code Tutors for assisting me with errors I was running into from time to time and testing my code to confirm that they were free of bugs.
-- Ian Meigh - Graduate of Code Institute who helped out checking a 404 error in regards redirecting to home page function at the very beginining of the project.
-- Rachel Lane - my girlfriend - Assisted with drafting the menu that is used on the website
+- ChatGBT - for troubleshooting issues that I encountered and review of code (mistakes or errors in code that I could not see).
