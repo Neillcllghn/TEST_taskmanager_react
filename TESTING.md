@@ -26,12 +26,14 @@ I have gone through each page using Google Chrome Developer Tools to ensure that
 
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. I have checked the HTML via direct input and also by inspecting the page source and running this through the validator.
 
-* [Index Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2F) - No errors or warnings.
-* [Make a Booking Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2Fcreate%2F) - No errors or warnings.
-* [Update Booking Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2Fupdate%2F37) - No errors or warnings.
-* [Register Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2Faccounts%2Fsignup%2F) - No errors or warnings.
-* [Sign in Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
-* [Sign Out Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2Faccounts%2Flogout%2F) - No errors or warnings.
+* [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2F) - No errors or warnings.
+* [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2Flogin) - No errors or warnings.
+* [Sign Up Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2Fsignup) - No errors or warnings.
+* [Task Create Form Page](https://taskmaster-frontend-ced22bbb7a28.herokuapp.com/tasks/create) - No errors or warnings.
+* [TaskList Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2Ftasklist) - No errors or warnings.
+* [Category Create Form Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2Fcategory%2Fcreate) - No errors or warnings.
+* [Category List Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2Fcategorieslist) - No errors or warnings.
+* [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftaskmaster-frontend-ced22bbb7a28.herokuapp.com%2Fprofiles%2F3) - No errors or warnings.
 
 
 - - -
