@@ -120,33 +120,26 @@ TaskMaster allows users to personalize their profiles, making them uniquely thei
 
 ### Colour Scheme
 
-Colour scheme used was adopted from the [Materialize CSS](https://materializecss.com/). Images from [Color Hex](https://www.color-hex.com/)
+Colour scheme used was adopted from the [React-Bootstrap](https://react-bootstrap-v4.netlify.app/getting-started/introduction/). Images from [Color Hex](https://www.color-hex.com/)
 
-- Used for the Navbar:
+- Used for the Navigation Bar - Idea from [CSS Cookbook](https://themes.typepad.com/guide/navigation-bar/).
 
- ![image](https://user-images.githubusercontent.com/109948740/235197870-22302e5a-cd6d-4911-a406-bc10791bc723.png)
+ ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/dcd7e42d-65b4-477d-9542-efb21d68b966)
 
+- Used to identify The active icon on the Navigation Bar (nice contrast from the main color of the Navbar). Also used when the user moves the mouse over any create, save etc.:
 
-- Used for the menu background (To contrast from the rest of the Home Page):
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/124ac57f-9077-4886-b0fb-a3e6a2db1ddd)
 
- ![image](https://user-images.githubusercontent.com/109948740/235199057-ca1d4abe-dfe2-4652-8e1d-6e98fc96a64c.png)
- 
+- Used for the main heading TaskMaster and the Task and Category create forms to separate the forms from the rest of the background):
 
-- Used within the menu - to contrast the color of the food items from the white collapsible headers of Starter, Main Course and Dessert:
-
- ![image](https://user-images.githubusercontent.com/109948740/235199820-9f1c12fd-bf89-4916-8ae7-af15c41b8907.png)
- 
- 
- - Used for the Booking Pages Form:
- 
- ![image](https://user-images.githubusercontent.com/109948740/235201743-aac969b4-2d6b-49ce-ad8a-225dbe607ebe.png)
-
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/e6a77d87-08e4-4711-84e3-3d2fe9e46198)
 
 - The Edit and Delete Buttons are green (to notify user that this is to edit) and red (which is suitable warning user that this is a delete button):
 
- ![image](https://user-images.githubusercontent.com/109948740/235202126-e60a079d-5a47-452a-96f8-72df5c946376.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/dcd7e42d-65b4-477d-9542-efb21d68b966)
 
- ![image](https://user-images.githubusercontent.com/109948740/235202290-d65ad13e-a048-4b8a-8670-f88ba62d4e7d.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/27c1beae-736d-4982-8999-5b2d0a4cbc65)
+
 
 - - -
 
