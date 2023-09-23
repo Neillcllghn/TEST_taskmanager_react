@@ -152,19 +152,20 @@ Profile Page:
 
 | Goals | How are they achieved? |
 | :--- | :--- | 
-| `User/Customers, both First time and returning customers` |
+| `User, both First time and returning users` |
 |  |  |  |
-| Provide a menu that the user can view. | Created a standard menu list that is collapsible thanks to JS and gives three of each of starter, main course and dessert so that the user can see what is on offer. |
-| Provide select times for reservations that the user can view. | Times that the user can select will be displayed on the home page. |
-| Register for an account. | The description on the home page encourages new users to register for an account in order to make a booking. A register link is displayed on the navbar if a user is not logged in. |
+| Register for an account. | The description on the home page encourages new users to register for an account in order to use the website. A register link (signup) is displayed on the navbar if a user is not logged in. |
 | Log in to my account. | If a user is not logged into an account, a login link is provided on the navbar. |
-| Make a booking (selecting a time and day). | A `Make a Booking` page will allow user selecting a specfic time by and day of their choosing. |
-| View a list of the users' bookings. | A `Your Bookings` page will allow the user to view all bookings made, and will state whether they are pending approval or are approved. |
-| Edit a booking. | When a user views their booking on the Your Bookings page, they are given the option to edit their booking (this option wiil only be available for pendng approval bookings). |
-| Delete a booking. | When a user views their booking on the Your Bookings page, they are given the option to delete their booking. When the user selects delete, a modal will pop up to confirm deletion and to let the user know that the booking be deleted and cannot be undone (this option wiil be available for both pendng approval and approved bookings). |
-| `Admin user` |
-|  |  |  |
-| Approve Bookings. | In the admin window, the bookings will be listed out in order of reservation dates and can be approved by selecting the checkbox beside each booking and clicking on accept from drop down menu. |
+| Create Task and Categories. | Links will be displayed to the user when signed in to create tasks and categories . |
+| View a list of the users' tasks and categories. | Links to the Task List and Categories list be displayed on the Navigation bar - will allow the user to view all tasks & categories created. |
+| Edit Tasks and Categories. | When logged in user views their tasks or categories on the respective pages, they are given the option to edit their tasks and categories. |
+| Delete tasks and categories. | Logged in users will be able to delete unwanted tasks and categories. When the user selects delete, a modal will pop up to confirm deletion and to let the user know that the task/category will be deleted. |
+| Update + view profile. | Logged in users will be able to view their profile, with options to update the profile by adding a profile image and a bio. |
+| Update Username and password. | Logged in users will be able to update/change their username and password on the profile page. |
+| Filter tasks by Completed/urgent Status. | Logged in users can filter their tasks by the status of whether they are completed or incomplete and also further filtering for urgent tasks (whether they are completed or incomplete). |
+| Search for tasks and categories. | Logged in users are provided with a search bar so that they can find specific tasks/categories based on typing in the task/category title. |
+| Incompleted and urgent task count. | Logged in users are provided with the number of tasks that are incomplete and urgent incomplete tasks on the home page. |
+
 
 
 ### Full Testing
