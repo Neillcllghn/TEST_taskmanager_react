@@ -5,7 +5,6 @@
   * [W3C Validator](#w3c-validator)
   * [W3C CSS Validator](#w3c-css-validator)
   * [JavaScript Validator](#javascript-validator)
-  * [Python Validator](#python-validator)
   * [Lighthouse](#lighthouse)
 * [MANUAL TESTING](#manual-testing)
   * [Testing User Stories](#testing-user-stories)
@@ -53,32 +52,6 @@ Image of Result:
 
 [jshint](https://jshint.com/) was used to validate the JavaScript.
 
-![image](https://user-images.githubusercontent.com/109948740/234950008-3ffaa5b3-192b-4dfd-98b1-8d4300edd346.png)
-
-- - -
-
-### Python Validator
-
-[Code Institute Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python files. Please see below the results from the python files in which I had to input 
-
-* bookings app.py - No errors or warnings.
-![image](https://user-images.githubusercontent.com/109948740/234952613-5513be5c-fbba-4728-90d7-a8c7f538d6bc.png)
-
-* tablefor2 app.py - No errors or warnings.
-![image](https://user-images.githubusercontent.com/109948740/234954589-4e932e47-f12d-4f5c-931a-8f28da38d6da.png)
-
-* forms.py - No errors or warnings.
-![image](https://user-images.githubusercontent.com/109948740/234952920-aca96315-3052-41a0-b5f9-6ef3a1ecb239.png)
-
-* models.py - No errors or warnings.
-![image](https://user-images.githubusercontent.com/109948740/234953170-4e1cd007-724f-4194-b037-5ebda304cf3a.png)
-
-* urls.py - No errors or warnings.
-![image](https://user-images.githubusercontent.com/109948740/234953459-aecf26e8-ef1c-45cf-8272-b75ebe56ad2a.png)
-
-* views.py - No errors or warnings.
-![image](https://user-images.githubusercontent.com/109948740/234953636-e56121cf-ec03-4dee-ab08-7c858638745a.png)
-
 - - -
 
 ### Lighthouse
@@ -86,58 +59,90 @@ Image of Result:
 We used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
 
 Overall, the lighthouse scores are very good, with one thing that could be improved.
+
 ### Desktop Results
 
 Home Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234960792-30d716a7-75a1-40cb-a622-8920887e3107.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/021058b1-7a4d-49a9-8009-6107e74127ed)
 
-Make a Booking Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234961740-0106a242-3676-4bd9-ac0e-206b8a4cfc35.png)
 
-Your Bookings Page:
+Login Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234961984-13a55ca2-9409-4426-87e0-6a7936c79050.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/59f84559-51d7-46b3-8274-8d27b77ed59f)
 
-Register Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234961081-41f21993-c6d0-4493-b0d1-ec288d1c94d2.png)
+Sign Up Page:
 
-Sign In Page:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/34a4139b-5e93-46ad-9355-76067aff6968)
 
-![image](https://user-images.githubusercontent.com/109948740/234961308-51a68725-0558-46c3-a979-08e12b0e2612.png)
 
-Sign Out page:
+Task Create Form Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234962162-c9638a7f-83ad-45c1-8375-c812a9ab0bb2.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/399904fc-7ec7-41af-9426-6c0bf4edcad9)
+
+
+Category Create Form Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/04b06bae-c596-460d-8f82-f431153f1ca0)
+
+
+Task list Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/abe42372-c029-488a-a56d-c36fb79013f3)
+
+
+Category list Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/d8d1bdb0-3bc1-4ff3-bc72-d046b4d30507)
+
+
+Profile Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/8d9faae2-12d9-44c0-b0fa-721f7a7db18a)
 
 
 ### Mobile Results
 
 Home Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234962665-e2d1b808-66a8-475d-aa1e-789aad7be14d.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/71235f7b-9d03-437d-9d80-b459eaf5310f)
 
-Make a Booking Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234963051-eecd4522-5c5e-426a-bee4-e84523c5baf5.png)
+Login Page:
 
-Your Bookings Page:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/2a069130-0291-48f4-9a57-7472f7ab2504)
 
-![image](https://user-images.githubusercontent.com/109948740/234963156-f5547468-7b91-4c29-8e12-587bc3a463a1.png)
 
-Register Page:
+Sign Up Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234963313-faf9d9cc-b75e-42ec-83e2-c6fefa7f4fd6.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/4bb433cf-580e-464f-a81c-d8b623746d66)
 
-Sign In Page:
 
-![image](https://user-images.githubusercontent.com/109948740/234963435-9900b7d5-72d6-4624-ace4-375c995229f8.png)
+Task Create Form Page:
 
-Sign Out page:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/f0db80c0-f2ab-4ebd-891c-4afd104986b9)
 
-![image](https://user-images.githubusercontent.com/109948740/234962503-92b60410-b836-4f1d-8c92-aeae13a7c9d2.png)
+
+Category Create Form Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/5a77447a-d1b5-4110-99e2-6b5b03a5cfa9)
+
+
+Task list Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/927c5062-f078-4831-9fd8-144f197e49a7)
+
+
+Category list Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/63a6b5f2-933f-424e-9be8-0b0582c81dac)
+
+
+Profile Page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/9c73d676-701d-4570-b80b-9e99566b461c)
 
 - - -
 
