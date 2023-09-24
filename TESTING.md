@@ -311,7 +311,7 @@ By deleting this Category, you will delete all Tasks associated with it". | Pass
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
 | 1 | When the Frontend projected was deployed on to Heroku, I could not login as the CORS was not properly set up in the backend. | Update the settings.py of the backend to include CORS_ALLOWED_ORIGINS = ['https://taskmaster-frontend-ced22bbb7a28.herokuapp.com/']. to directly link the backend to the url of the frontend and added CORS_ALLOW_METHODS to give the frontend permission to make various updates like delete, get, put etc. and this solved the issue |
-| 2 | I noticed during the test phase that when a task or category was updated or deleted, that the task/category would not update or be deleted straight away and that you needed to refresh the page in order for the item to be update or deleted (delay from backend to front end). So I added a windows reload into the code when the user deletes or edits the item in question and this solved the problem|
+| 2 | I noticed during the test phase that when a task or category was updated or deleted, that the task/category would not update or be deleted straight away and that you needed to refresh the page in order for the item to be update or deleted (delay from backend to front end). | So I added a windows reload into the code when the user deletes or edits the item in question and this solved the problem |
 
 
 - - -
