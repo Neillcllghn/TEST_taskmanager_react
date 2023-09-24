@@ -15,11 +15,13 @@ I used the Responsive Viewer chrome extenstion to test the responsiveness on eac
 
 - Galaxy S9 view:
 
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/9b7c8f0b-9ed0-4ccc-aeca-9ac236817d43)
 
 
 
-- iPhone S5 view:
+- iPhone XR view:
 
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/d18e3ccf-0f61-4e6a-94a8-6ad8942c5701)
 
 
 
@@ -162,34 +164,28 @@ I decided to draw the website in both Desktop and Mobile view as this is how I p
 #### Desktop view:
 - Home Page:
 
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/b2d9d760-b874-4c36-a675-6f6ffaf8ca01)
 
+- Task Create Form Page:
 
-- Make TaskList Page:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/f645d413-a06d-4ead-b1d9-bea749a1be9b)
 
-- Your CategoryList Form Page:
+- TaskList page:
 
-- Your Task Create Form Page:
-
-
-- Your Category Create Form Page:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/24e877d4-b6ec-4781-9cb4-99bab35a8fa9)
 
 - - -
 
 #### Mobile View:
 
-- Home Page:
+- Your CategoryList Page:
+
+ ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/caed690b-65b8-413f-9eb2-5de855524879)
 
 
+- Profile Page:
 
-- Make TaskList Page:
-
-- Your CategoryList Form Page:
-
-- Your Task Create Form Page:
-
-
-- Your Category Create Form Page:
-
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/0c570183-14bd-4ab3-96db-906ff9019524)
 
 
 - - -
@@ -218,129 +214,170 @@ When Button is highlighted:
 
 ### The Home Page
 
-The home page of TableFor2 displays the sites name as a title and then a container which holds some welcome text, the times and menu. The Welcome Text will change for the user, from indicating that the user will need to sign in to make a booking to providing links to make a booking when signed in:
+The home page of TaskMaster displays the sites name as a title and then a container which holds some welcome text, and description of what you can do as a user. The Welcome Text will change for the user, from indicating that the user will need to sign in to create tasks and categories:
 
 - When the user is not registered or signed in:
-  ![image](https://user-images.githubusercontent.com/109948740/234085541-666f3c25-b19f-49c7-ab91-0d5935b15c17.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/3742d330-de8f-41ae-886f-7e899bb1bece)
+
+
+- When the user is signed in -  personalised to the user with the count of incomplete tasks and urgent incomplete tasks:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/6f11c94c-477b-4a80-856a-af8d4ff0160b)
+
+
+Another feature to notify that the user is signed in or not is the Nav-bar will change from providing links to the Register/Login pages to New Task, New Category, Task List, Categories Profile and Logout pages:
+
+- When the user is not registered or signed in:
+
+  ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/452af642-4ad6-40d3-9752-341503c5b66c)
 
 
 - When the user is signed in:
-  ![image](https://user-images.githubusercontent.com/109948740/234085691-572b8c89-130c-45ae-bb7b-2a0b537843c3.png)
 
-
-Another feature to notify that the user is signed in or not is the Nav-bar will change from providing links to the Register/Login pages to Make a Booking, Your Bookings and Logout pages:
-
-- When the user is not registered or signed in:
-
-  ![image](https://user-images.githubusercontent.com/109948740/234086164-c78ad6b0-7a59-46ca-b78d-15ef42c049d4.png)
-
-
-- When the user is signed in:
-
-  ![image](https://user-images.githubusercontent.com/109948740/234086102-31519ca7-2e85-4294-81de-64774032ab85.png)
-
-
-The Times portion of the home page (this is displayed to the user, whether they are logged in or not) and all times are based on GMT, which means that users will need to take into account the time difference if located in a different timezone:
-
-![image](https://user-images.githubusercontent.com/109948740/234086515-004fe18f-fe1a-48d4-91af-799e131a23fa.png)
-
-The Menu is also displayed to the user regardless of login/Registeration and is a collapsible list when clicked on consisting of Starter, Main Course and Dessert selections:
-
-![image](https://user-images.githubusercontent.com/109948740/234087251-2952bee7-0da9-4b7f-aa53-c531c2172238.png)
-
-![image](https://user-images.githubusercontent.com/109948740/234087288-096b30da-d1b6-483d-a379-b4eb1a8a870e.png)
+ ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/a2cdc13b-5a43-429d-94b5-c1cef2608b3c)
 
 - - -
 
-### Registeration Page
+### Sign Up Page
 
-This consist of a title, a link to login if you are already have an account, a means to type in a username, and email (optional) and a password.
+This consist of a title, a link to login if you are already have an account, a means to type in a username and password.
 
-![image](https://user-images.githubusercontent.com/109948740/234365245-18ba1fd9-f18b-41fd-8415-f60263dac061.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/4a911b7c-8c52-4785-8b82-78ffdbe4a3b0)
 
 
 - - -
 
-### Sign in page
+### Login page
 
 This consist of a title, a link to register if you do not have an account, a means to type in your username and password. 
 
-TO NOTE: There is a remember me checkbox which is part of the django library allauth which was used in this project that is not functioning (will be a future implemenation).
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/450c3dfd-69c1-4af1-a345-e8b6546e9bca)
 
-![image](https://user-images.githubusercontent.com/109948740/234366047-97a1815b-1afc-4f73-bf4d-5d9669d469a7.png)
-
-- - -
-
-### Sign out page
-
-This consist of a title, and a signout button:
-
-![image](https://user-images.githubusercontent.com/109948740/234367296-b3b65089-0f1e-4d30-9602-7b03d3d68902.png)
 
 - - -
 
-### Make a Booking Page:
+### Task Create Page:
 
-This consists of short sentences outlining what the user can and cannot do such as how many guests the user can have, a link to the home page for the user to be reminded of the available times and an additional note that each booking must have an email which will give a booking its uniqueness and so if the user wishes to book on behalf of a friend on the same day as a booking they made, a different email will allow the user to proceed with the booking.
+This page allows the user to create tasks by adding a title, category, description, urgent checkbox, and a due date.
 
 The user will be notifed by error message if the following happens:
-- Double booking - as mentioned above, if the user inputs the same email and selects the same day as a booking that is already made, it will be rejected.
-- Day in the past - if the user selects a day in the past, an error message will appear preventing the user from booking.
-- Time in the past - if the user selects a time in the past, an error message will appear preventing the user from booking.
-- Number of guests - if the user selects more than 6 and less than 1, an error message will appear preventing the user from booking.
+- Date in the past - The user will not be allowed to select a date in the past.
+- Leave any field blank (except urgent checkbox) - if the user clicks save without entering anything, error messages will appear preventing the user from creating a task.
+- Category - The user will need to create categories before they can create a task.
 
-![image](https://user-images.githubusercontent.com/109948740/234372929-2c1a2e5a-9591-4fe6-b0a3-699dffc5e865.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/ad3b344a-3f62-4b51-af8d-acca46deb8b9)
 
-- - -
-
-### Your Bookings page:
-
-This outlines the bookings the user has made, whether it is pending approval or is approved. It is also the page in which the user can edit bookings but only if they are pending approval. Any Booking that is approved can only be deleted. When there is no bookings, rather than have a blank page, there will be a message displayed to the user that there is no bookings and a link be available to direct the user to the Make a booking page.
-
-- Page with no bookings:
-
-  ![image](https://user-images.githubusercontent.com/109948740/234650447-e941a541-4b63-4063-b6bd-866a266f0b52.png)
-
-- Booking example pending approval:
-  
-  ![image](https://user-images.githubusercontent.com/109948740/234651087-123a3973-01e5-49c3-a86e-731d06e1181e.png)
-
-- Booking that is approved:
-  
-  ![image](https://user-images.githubusercontent.com/109948740/234651788-01566b67-81d2-447d-b1bb-54f8933047e8.png)
 
 - - -
 
-### Update Bookings page:
+### Category Create Page:
 
-If the user wishes to update their booking, by clicking on the green EDIT BOOKING button, the user will be redirected to a new update bookings page which will have all the details of teh booking you wish to edit. When the user has made the required updates (provided that the user has followed the same criteria as the Make a bookings page e.g. guests between 1-6, cannot book a day in the past etc.) by clicking on the update booking button, the user will return to the Your Bookings page with the message (Booking has been updated successfully) and the booking will appear with the new updates.
+This page present simply one field for a user to enter a category title of their choosing.
 
-- Update Bookings page (with updates):
+The user will be notifed by error message if the following happens:
+- Leave field blank - if the user clicks save without entering anything, error message will appear preventing the user from creating a category.
 
- ![image](https://user-images.githubusercontent.com/109948740/234655023-1f15e69b-bf33-45a3-957f-f8fca745ff6a.png)
- 
-- Yours Bookings page with the message and updated booking:
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/14be1126-e354-45a8-8bc3-d86c247a1071)
 
- ![image](https://user-images.githubusercontent.com/109948740/234655294-5ac1cded-aeb5-46b7-b926-c6d93d6a4acb.png)
+
+- - -
+
+### TaskList page:
+
+This page will display to the user the tasks they have created and filter and search functionality is available so that the user can filter for completed, incompleted and urgent tasks or search for a specfic task by entering the title of that task. Furthermore, the user can also edit and delete tasks on this page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/8c7eea5c-8fc4-4939-ad4c-7c5affad5b97)
 
  - - -
  
-### Delete Booking function:
+### Edit a Task function:
 
-The final part to the bookings page is the delete function which is indicated to the user as a bright red button. Once the button is clicked a modal will appear with a warning to the user that the action will result in the booking being deleted, in which the user can either delete the booking or click close to return to the Your Bookings page.
+The user can edit a task by selecting edit, and they will be redirected to the edit window with all the details of that task displayed. The user can make edits to any aspect of the task from the title to the due date (however like the Create window, the user cannot leave a field blank). Furthemore, in addition, a completed checkbox will be included so that the user can close the task and move the task's status to completed.
 
-
-![image](https://user-images.githubusercontent.com/109948740/234656155-f7418fe7-9700-435c-a1df-2d41d724de67.png)
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/fc7ca6e6-ec35-4080-bdd8-770d41c7a261)
 
 - - -
 
+### Delete a Task function:
+
+The user can delete a task by selecting the delete button. A modal will appear providing a warning message that the task will be deleted. Once the task is deleted, it will no longer appear.
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/9a815f77-a36c-4495-a600-458ca49f0fa0)
+
+- - -
+
+### Categories List page:
+
+This page will display to the user the categories they have created, and search functionality is available so that the user can search for a specfic category by entering the title of that category. Furthermore, the user can also edit and delete categories on this page:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/1c64e256-aed2-4c5a-9e94-7b8d41c90610)
+
+ - - -
+ 
+### Edit a Category function:
+
+The user can edit a category by selecting edit, and they will be redirected to the edit window with all the details of that category displayed. The user can update the title (however like the Create window, the user cannot leave a field blank).
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/d2787dce-eac1-44a9-baa3-b74bd6c21b89)
+
+- - -
+
+### Delete a Category function:
+
+The user can delete a Category by selecting the delete button. A modal will appear providing a warning message that the category will be deleted. Once the category is deleted, it will no longer appear. Furthermore, if a category is deleted, all tasks associated with that task will be deleted.
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/b8c1b2ac-7d54-4eef-a149-82d06370b525)
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/14b75d00-6886-4610-bf9b-0ba0562eb5cf)
+
+- - -
+
+### Profile page:
+
+The user can also view their profile and add an image or a bio by clicking on the Edit Profile page. They can also update their username and password by selecting the respective edit buttons:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/09ae4f00-f3d1-49f0-ae02-0b5de6b4fe61)
+
+ - - -
+ 
+### Edit Profile function:
+
+The user can edit their profile as mentioned above by selecting the Edit Profile button.This will extend out the page to display a close button, the change image section and bio section. Once the user selects the change image button - a file will open for the user to add an image, once the user selects the save button, the user can see the image appear on the profile page and NavBar (along with each task and category created). The user can also add a bio if they wish.
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/886961ef-252c-408f-9da6-ae42ce2e22cc)
+
+- - -
+
+### Edit Username function:
+
+The user can update their username by selecting the Edit Username button - this will extend the page as was the case with Edit Profile, with a close button and a form with the username which the user can update (The field cannot be left blank however).
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/5a4697b4-0f56-4e20-a070-451cdd5d73be)
+
+
+### Edit Password function:
+
+The user can update their password by selecting the Edit Password button - this will extend the page as was the case with Edit Profile and Username, with a close button and a form with the two blank fields (New Password & Confirm new password). User will be notifed that the password has been updated.
+
+The user will be notifed by error message if the following happens:
+- Leave any field blank - if the user clicks save without entering anything, error messages will appear.
+- Leave one field blank.
+- If the user enters two different passwords.
+- If it is only numbers or letters.
+- If the password is less than 8 characters.
+
+- Leave any field blank - if the user clicks save without entering anything, error messages will appear.
+
+- - -
+
+
 ### Future Implementations
 
-- Special request textbox for customers/users. Allow users to leave a special reguest with their bookings.
-- Automated email sent to user - use Javascript to issue a automated email (via emailJS) outlining the details of their booking and that it is pending approval, plus an email to be issued to user when booking is approved.
-- A notifcation to be sent to the site admin that there are bookings pending approval.
-- Add a js listener for the checkbox in the Sign in page so that users can be automatically signed in when they logon to the website.
-- Error Messages will not appear for the user when they are editing a booking but the functions that prevent the user from booking outside of the parameters set (i.e. number of guest must be between 1-6, day and time must be in the present or future etc.) still apply. Will look to update website with this capability in the future.
+- Email notifcation to user on tasks that are approaching their due dates.
+- Success message when a user updates a category.
+- Add more imagery to the website.
+- Allow the user to enter an email address so that notifcations (like what was mentioned above) can be sent to the users' email.
+- Add a calender.
+- Add a footer.
 
 - - -
 
@@ -426,7 +463,7 @@ To clone the repository:
 
 ## Testing
 
-Please see [TESTING.md]() for all testing performed
+Please see [TESTING.md](https://github.com/Neillcllghn/taskmaster_react/blob/main/TESTING.md) for all testing performed
 
 - - -
 
@@ -440,9 +477,9 @@ Please see [TESTING.md]() for all testing performed
 
 ### Content:
 
-1. The Code Institute walkthrough project Moments was of great inspiration with regards the profiles, and Navigation bar
+1. The Code Institute walkthrough project Moments was of great inspiration with regards the profiles, and Navigation bar, redirect and userContext hooks etc.
 
-2. All other content for the site, such as menu, booking form and instructions etc. were written by myself.
+2. All other content for the site, tasks and categories were written by myself.
 
 - - -
 
