@@ -186,80 +186,122 @@ Google Chrome on Mac and Windows, Safari
 |  |  |  |  |  |
 | Logo image link | When clicked you are redirected to the home page | Clicked Logo | Redirected to home page | Pass|
 | Navbar home link | When clicked you are redirected to the home page | Clicked link | Redirected to home page | Pass|
-| Navbar Register link | When clicked you are redirected to the Register page | Clicked link | Redirected to Register page | Pass|
+| Navbar Sign Up link | When clicked you are redirected to the Sign Up page | Clicked link | Redirected to Register page | Pass|
 | Navbar Login link | When clicked you are redirected to the Sign in page | Clicked link | Redirected to Sign in page | Pass|
-| Navbar Make a Booking link | When clicked you are redirected to the Make a booking page | Clicked link | Redirected to Make a booking page | Pass|
-| Navbar Your Booking link | When clicked you are redirected to the Your Booking page | Clicked link | Redirected to Your Booking page | Pass|
-| Navbar Logout link | When clicked you are redirected to the Sign out page | Clicked link | Redirected to Sign out page | Pass|
+| Navbar New Task link | When clicked you are redirected to the Task Create Form page | Clicked link | Redirected to Task Create Form page | Pass|
+| Navbar New Category link | When clicked you are redirected to the New Category page | Clicked link | Redirected to Your Booking page | Pass|
+| Navbar Sign out link | When clicked you are redirected to the Home Page (Logged out) | Clicked link | Redirected to the home Page page | Pass|
 | Navbar link - Hover | When hovered over a shading of the area will occur to indicate that the cursor is over link | Hovered over link | Shading appears | Pass|
-| **Menu** |  |  |  |  |
-|  |  |  |  |  |
-| Menu list | When clicked on, the menu will open to reveal the menu list and when clicked again it will collapse | Click collapsible list | List of menu appears and collapses when clicked on again. | Pass|
-| **Footer** |  |  |  |  |
-|  |  |  |  |  |
-| Social media links | When clicking on social media links (displayed to users as icons courtesy of font awesome) an new window will appear therefore not closing the webpage the user is on | Clicked link | A new window will appear. | Pass|
-| Footer will stick to bottom of page | Regardless of what content is displayed on the webpage, the footer will remain at the base of that page | Stick footer | Footer remains at bottom of page. | Pass|
 
 `Login Page`
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Username input - empty | This is a required field so the form should not submit if empty | Tried to submit the form with this field empty| Error message will appear to user requiring a username to proceed. | Pass|
+| Username input - empty | This is a required field so the form should not submit if empty | Tried to submit the form with this field empty| Error message will appear to user requiring This field may not be blank. | Pass|
 | Password input - empty | This is a required field so the form should not submit if empty | Tried to submit the form with this field empty| Error message will appear to user requiring a password to proceed. | Pass|
-| Incorrect username or password used | A flash message should display saying username/password incorrect - this is defensive programming - not letting user know which input is incorrect | Incorrect username/password entered| Message flashes to let the user know they have entered an incorrect username/password. | Pass|
+| Incorrect username or password used | A flash message should display saying Unable to log in with provided credentials. - this is defensive programming - not letting user know which input is incorrect | Incorrect username/password entered| Message flashes to let the user know they have entered an incorrect username/password. | Pass|
 | Link to register page | This should redirect the user to the register page | Clicked link| Redirected to the register page. | Pass|
+| Login successfull | This should redirect the user to the Home Page with greeting message | Clicked login button | Redirected to the home page. | Pass|
 
-`Register Page`
+`Sign Up Page`
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Username input - empty | The username is a required field, so should not submit with no value | Tried to submit form with no value entered | Tooltip lets user know this value is required. | Pass|
-| Username input | If username is in use, message should flash to user | entered an in use username | Message flashed to say username already in use. | Pass|
+| Username input | If username is in use, message should flash to user | A user with that username already exists. | Message flashed to say username already in use. | Pass|
 | Password input | This field should be at least 8 characters long | Entered password less than 8 characters long | Tooltip tells user the password should be at least 8 characters long. | Pass|
 | Password input - empty | The password is a required field, so should not submit with no value | Tried to submit form with no value entered | Tooltip lets user know this value is required. | Pass|
-| Register button | Should redirect user to the log in page and a successful message flashed | Created new user and submitted form | Redirected to the log in page and message flashed. | Pass|
+| Register button | Should redirect user to the log in page  | Created new user and submitted form | Redirected to the log in page. | Pass|
 
 
-`Make a booking Page`
-
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| **Email** |  |  |  |  |
-|  |  |  |  |  |
-| Email required | Before a booking can be made an email is needed | Click booking submit button without an email| Error message will appear to user requiring an email to proceed. | Pass|
-| Email required | Only an email (format of an email) can be inputted into the email field | Click booking submit button without an email | Error message will appear to user requiring an email to proceed. | Pass|
-| Different emails can allow for bookings on the same day | To allow the user to book for friends or colleagues on the same day that teh user has booked, the user can use their emails to make booking| Click booking submit button with email| Booking made successfully. | Pass|
-| **Number of People** |  |  |  |  |
-|  |  |  |  |  |
-| Selecting a number of guests between 1-6 | As noted on the bookings page, only between 1-6 people can be select per booking | Select number of people outside of the number 1-6| Error message will appear to user requiring number of guest between 1-6 to proceed. | Pass|
-| **Reservation Date** |  |  |  |  |
-|  |  |  |  |  |
-| Selecting a day of booking | A user cannot select a day in the past | Selecting a day in the past | Error message will appear to user requiring today's date or a day in the future to proceed. | Pass|
-| Selecting a day of booking (Double Booking) | Preventing the user from select a day that is already booked when creating a new booking (if same email is used). | Selecting a date that is already booked | Error message will appear to user stating that the booking exists for the email used. | Pass|
-| **Reservation Time** |  |  |  |  |
-|  |  |  |  |  |
-| Selecting a time of booking | A user cannot select a time in the past (Based on the GMT Irish timezone) | Selecting a time in the past | Error message will appear to user requiring time in the future to proceed. | Pass|
-| Selecting a time based on the specfic times outlined on website | A user cannot select a time that is outside the times outlined on the Home page | Selecting a time in outside of these times | Error message will appear to user requiring correct time to proceed. | Pass|
-
-`Your Bookings Page`
+`Create a Task`
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| **List of Bookings** |  |  |  |  |
+| **Task Title** |  |  |  |  |
 |  |  |  |  |  |
-| List of Bookings in order of day | As list of Bookings will appear on this page when bookings are made and are in order by Reservation date | List of Bookings in order of Reservation date | List will appear in order of reservation date. | Pass|
-| Status of Booking | The user can see approval status whether pending approval or approved | When booking is created, status pending approval will appear and user can edit or delete booking. When approved, status will appear as approve and the user can only delete booking | List of Bookings will appear with Pending Approval or Status approved. | Pass|
-| **Edit Bookings** |  |  |  |  |
+| Task Title required | Before creating a task, a title is needed | Click create button without a title | Error message will appear to user stating: This field may not be blank. | Pass|
+| **Categories** |  |  |  |  |
 |  |  |  |  |  |
-| Edit Booking | User can edit a pendng approval status booking by clicking on Green Edit Booking | Click on Edit Booking button | Redirected to a new page called Update Booking. | Pass|
-| Make changes | User can edit a booking by adding addtional guests (Between 1-6), Todays' date or in the future, a time in the future, or change the email | Edit the number of guests, the day and time and change the email | Once clicked on the Update booking button, you are redirected to a Your Bookings page with the booking updated. | Pass|
-| **Delete Bookings** |  |  |  |  |
+| Category is required | Before creating a task, a category is needed | Click create button without a category | Error message will appear to user "You must select a Category" to proceed. | Pass|
+| **Task Description** |  |  |  |  |
 |  |  |  |  |  |
-| Delete Booking - Modal | A modal should appear stating to user that this action cannot be undone | Click on Delete Booking button | Modal appears with Warning message that this acction cannot be undone. | Pass|
-| Delete Booking - Close | A modal should appear stating to user that this action cannot be undone, when the user clicks on Close, they are redirected to the Your Bookings page | Click on close button in modal | Redirected back to Your Bookings page and booking is not deleted. | Pass|
-| Delete Booking - Delete | A modal should appear stating to user that this action cannot be undone, when the user clicks on Delete, they are redirected to the Your Bookings page with the selected booking deleted | Click on Delete button in modal | Redirected back to Your Bookings page and selected booking is deleted. | Pass|
+| Task Description required | Before creating a task, a description is needed | Click create button without a description | Error message will appear to user stating: This field may not be blank. | Pass|
+| **Due Date** |  |  |  |  |
+|  |  |  |  |  |
+| Selecting a day | A user cannot select a day in the past | Selecting a day in the past | Error message will appear to user requiring day cannot be in the past. | Pass|
 
+`Create a Category`
 
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| **Category Title** |  |  |  |  |
+|  |  |  |  |  |
+| Category Title required | The user cannot leave the form blank | Click create button without a title | Error message will appear to user stating: This field may not be blank. | Pass|
+
+`Task List Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| **List of Tasks** |  |  |  |  |
+|  |  |  |  |  |
+| List of Tasks displayed | As list of Tasks created by the user will appear on this page when tasks are created and there is a spinner to allow for the information to seamlessly appear on screen from the backend | List of tasks appear with spinner | List will appear of tasks. | Pass|
+| Filter option | The user can filter by completed, incompleted tasks | Selected the filter options at top of page | Tasks that are completed will appear when the completed filter is selected and the incomplete tasks appear when the incomplete filter is selected. | Pass|
+| Urgent Filter option | The user can filter by urgent tasks, which can be mixed with the completed and incomplete filters | Selected the urent filter options at top of page | Tasks that are urgent will appear when the filter is selected and the respective urgent completed and  incomplete tasks appear when the their respective filters are selected. | Pass|
+| Search option | The user can search for a specfic task by typing in the task title or category  | type in a title into the search bar | the specfic task appears. | Pass|
+| **Edit Tasks** |  |  |  |  |
+|  |  |  |  |  |
+| Edit tasks | User can edit a task by clicking on Edit button | Click on Edit button | Redirected to the edit page. | Pass|
+| Make changes | User can edit a tasks by changing the title, category, description, urgent status, due date and you can change the completed status | Edit the Task title | Once clicked on the save button, you are redirected back to the tasklist page with the task updated. | Pass|
+| **Delete Tasks** |  |  |  |  |
+|  |  |  |  |  |
+| Delete Task - Modal | A modal should appear warning the user that they are about delete a task | Click on Delete Booking button | Modal appears with Warning message "You are about to delete your task". | Pass|
+| Delete Task - Close | A modal should appear warning the user that they are about delete a task, when the user clicks on close, they are redirected to the TaskList page | Click on close button in modal | Redirected back to Tasklist page and Task is not deleted. | Pass|
+| Delete Task - Delete | A modal should appear warning the user that they are about delete a task, when the user clicks on Delete, they are redirected to the tasklist and the task is deleted | Click on Delete button in modal | Redirected back to TaskList page and the selected task is deleted. | Pass|
+
+`Category List page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| **List of Categories** |  |  |  |  |
+|  |  |  |  |  |
+| List of Categories displayed | As list of Categories created by the user will appear on this page when categories are created and there is a spinner to allow for the information to seamlessly appear on screen from the backend | List of categories appear with spinner | List will appear of categories. | Pass|
+| Search option | The user can search for a specfic category by typing in the category title | type in a title into the search bar | the specfic category appears. | Pass|
+| **Edit Categories** |  |  |  |  |
+|  |  |  |  |  |
+| Edit categories | User can edit a category by clicking on Edit button | Click on Edit button | Redirected to the edit page. | Pass|
+| Make changes | User can edit change the title | Edit the Category title | Once clicked on the save button, you are redirected back to the category list page with the category updated. | Pass|
+| **Delete Tasks** |  |  |  |  |
+|  |  |  |  |  |
+| Delete Category - Modal | A modal should appear warning the user that they are about delete a category and this action will delete all tasks associated with it | Click on Delete Booking button | Modal appears with Warning message "You are about to delete your Category!!!
+By deleting this Category, you will delete all Tasks associated with it". | Pass|
+| Delete Category - Close | A modal should appear warning the user that they are about delete a category, when the user clicks on close, they are redirected to the categorylist page | Click on close button in modal | Redirected back to categorylist page and Category is not deleted. | Pass|
+| Delete Category - Delete | A modal should appear warning the user that they are about delete a category, when the user clicks on Delete, they are redirected to the categorylist and the category is deleted | Click on Delete button in modal | Redirected back to categorylist page and the selected taskcategory is deleted. | Pass|
+
+`Profile page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| **Profile** |  |  |  |  |
+|  |  |  |  |  |
+| Users Profile should appear | The logged in user should only see their own Profile with buttons to update the profile such as edit profile, edit username, edit password | Click on Profile link on NavBar | User Profile appears with the buttons as described. | Pass|
+| **Edit Profile** |  |  |  |  |
+|  |  |  |  |  |
+| Edit Profile page | User can edit their profile by clicking on Edit Profile button and gaining access to this window | Click on Edit button | The page will extend to reveal a close button and the details to edit, including uploading a profile image and a bio. | Pass|
+| Add a Profile image | User can add a profile image | clicked on edit profile, selected the change image button  | Was able to select an image and then click save to add the image. | Pass|
+| Add a Bio | User can add a bio | clicked on edit profile, typed in the bio section and clicked save  | Bio Appears in Profile Page. | Pass|
+| Close the Edit Profile page | User can close the Edit section | clicked on close Edit Profile  | The edit section closes. | Pass|
+| **Edit Username** |  |  |  |  |
+|  |  |  |  |  |
+| Edit Username page | User can edit their username by clicking on Edit username button and the username edit page will appear | Click on Edit button | The page will extend to reveal a close button and the details to edit the username. | Pass|
+| Change Username | User can edit their username by entering new details into the form provided and the change should appear on the profile page | Changed the username and clicked the save button | The username changes. | Pass|
+| Close the Edit Username page | User can close the Edit section | clicked on close Edit Username  | The edit section closes. | Pass|
+| **Update Password** |  |  |  |  |
+|  |  |  |  |  |
+| Edit Password Page | User can edit their password by clicking on Edit password button and the password edit page will appear | Click on Edit button | The page will extend to reveal a close button and the details to edit the password. | Pass|
+| Change Password - leaving the fields blank | When the edit passsword button is clicked on, a form will appear with two blank lines to be filled in (one to enter a password and the second to confirm the password), if the form is left blank, a warning message should appear "This field may not be blank" | clicked the save button but left the fields blank | Warning message: "This field may not be blank". | Pass|
+| Change Password - leaving one field blank | When the edit passsword button is clicked on, a form will appear with two blank lines to be filled in (one to enter a password and the second to confirm the password), if one of the fields are left blank, a warning message should appear "This field may not be blank" | clicked the save button but left one field blank | Warning message: "This field may not be blank". | Pass|
+| Change Password - both fields don't match | When the edit passsword button is clicked on, a form will appear with two blank lines to be filled in (one to enter a password and the second to confirm the password), if two different passwords are entered , a warning message should appear "The two password fields didn’t match." | clicked the save button | Warning message: "The two password fields didn’t match.". | Pass|
+| Change Password - successful change | When the edit passsword button is clicked on, a form will appear with two blank lines to be filled in (one to enter a password and the second to confirm the password), enter a two identical passwords (that are at least 8 charaters long and are a mix of number and letters), a success message should appear | clicked the save button | The password is changed successfully | Pass|
+| Close the Edit Password page | User can close the Edit section | clicked on close Edit Username  | The edit section closes. | Pass|
  - - -
 
 ## BUGS
@@ -268,18 +310,8 @@ Google Chrome on Mac and Windows, Safari
 
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
-| 1 | Modal was not working. | Added Modal Trigger class to the `a` element instead of the `button` element which triggered the modal.  |
-| 2 | Index.html (Home Page) was not loading correctly when I tried to logout. When logging out, an error page appeared intead of the home page. | In addtion to the adding of the path to index.html as `path('', views.index, name='home')` to bookings app urls.py, I had to change the `LOGOUT_REDIRECT_URL = 'home'` in settings.py.  |
-| 3 | When intially testing the field for Number of people that a user can book, there was no limit to what the user can book, even book 0 people. | Created a function in the forms.py that will prevent user from going below 1 and exceeding 6 people `def clean_group_size(self)`.  |
-| 4 | When intially testing the field for Reservation Date, the user could book a day in the past and it will be accepted. | Created a function in the forms.py that will prevent user selecting a day in the past `def clean_day(self)`.  |
-| 5 | Another issue arrised when the user could select a time in the past and although I had created a function similar to the `def clean_day(self)` this did not have the desired affect as it prevented the user from booking in the future (or the present) in terms of the day if the time was not in the future at the local time of booking. | Created a function `def clean_future_time_day(self)` (with the assistance of the CI Tutors which were a great help) that took the current day and local time in an if statement and if the day is equal to the present day and the time was greater than the current time, then the user can proceed, else raise a `ValidationError`.  |
-| 6 | Even though the user can see the bookings they make and therefore double booking is unlikely, however in the event that the user does double book, a function was created to prevent this which was `def clean(self)`. However, this also prevented the user from editing bookings if it was on the same day or the same email was used. | I rewrote the code in both the `def clean(self)` to exclude bookings that contain the `instance` attribute using the `hasattr()` method and to filter for email. This had the desired effect.  |
-| 7 | Following up on the time issue, another issue arised when the local time (GMT irish) and the server time was not synced correctly and so this was causing the user to book a time that was in the past (in terms of the local time). | I did not realise at the time that the `TIME_ZONE` variable in `Settings.py` was set to `UTC` and so I changed this to `Europe\London` and this corrected this issue.  |
+| 1 | When the Frontend projected was deployed on to Heroku, I could not login as the CORS was not properly set up in the backend. | Update the settings.py of the backend to include CORS_ALLOWED_ORIGINS = ['https://taskmaster-frontend-ced22bbb7a28.herokuapp.com/']. to directly link the backend to the url of the frontend and added CORS_ALLOW_METHODS to give the frontend permission to make various updates like delete, get, put etc. and this solved the issue |
+| 2 | I noticed during the test phase that when a task or category was updated or deleted, that the task/category would not update or be deleted straight away and that you needed to refresh the page in order for the item to be update or deleted (delay from backend to front end). So I added a windows reload into the code when the user deletes or edits the item in question and this solved the problem|
+
 
 - - -
-
-### Known Bugs
-
-| No | Bug | |
-| :--- | :--- | :--- |
-| 1 | Error messages will not appear for the user when `updating a booking` as is the case with the `create a new booking` but due to time consraints I have added this to the future implementation section in the README. | |
