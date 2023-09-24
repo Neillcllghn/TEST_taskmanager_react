@@ -192,7 +192,7 @@ I decided to draw the website in both Desktop and Mobile view as this is how I p
 
 ## Features
 
-The website is comprised of a home page, login, Sign up, a Task and Category Create form page, an Task edit and Category Edit page and a Task and Category List page, Profile page.
+The website is comprised of a home page, login, Sign up, a Task and Category Create form page, a Task edit and Category Edit page and a Task and Category List page, Profile page.
 
 All Pages on the website are responsive and have:
 
