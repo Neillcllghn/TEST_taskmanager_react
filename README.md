@@ -24,7 +24,8 @@ I used the Responsive Viewer chrome extenstion to test the responsiveness on eac
 
 - iPhone XR view:
 
-![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/d18e3ccf-0f61-4e6a-94a8-6ad8942c5701)
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/29a3e2b2-2f96-431b-b168-0d64ee54c77d)
 
 
 
@@ -370,6 +371,9 @@ The user will be notifed by error message if the following happens:
 
 - Leave any field blank - if the user clicks save without entering anything, error messages will appear.
 
+  ![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/1718e60c-2e7c-4143-b548-dcc9ca0bd352)
+
+
 - - -
 
 
@@ -424,7 +428,7 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 ### Deployment
 
-The site is deployed using Heroku - [TableFor2](https://tablefor2-pp4.herokuapp.com/)
+The site is deployed using Heroku - [TaskMaster](https://taskmaster-frontend-ced22bbb7a28.herokuapp.com/)
 
 To Deploy the site using Heroku:
 
@@ -434,7 +438,7 @@ To Deploy the site using Heroku:
 4. Select Reveal Config vars and input the environment variables.
 5. Click the Deploy button.
 6. Connect to GitHub.
-7. Search for the GitHub Repository [Neillcllghn/Tablefor2](https://github.com/Neillcllghn/Tablefor2)
+7. Search for the GitHub Repository [Neillcllghn/taskmaster_react](https://github.com/Neillcllghn/taskmaster_react)
 8. Click on Deploy Branch.
 9. Once app has completed building - Click on Open app on top right hand corner of page.
 
@@ -446,7 +450,7 @@ The site has now been deployed.
 
 #### How to Fork
 
-To fork the Tablefor2 repository:
+To fork the Taskmaster_react repository:
 
 1. Log in (or sign up) to Github.
 2. Go to the repository for this project, [Neillcllghn/taskmaster_react](https://github.com/Neillcllghn/taskmaster_react)
