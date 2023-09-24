@@ -3,13 +3,15 @@ TaskMaster is a responsive website allowing visitors to view on a range of devic
 
 I used the Responsive Viewer chrome extenstion to test the responsiveness on each web page which you can see below:
 
+- Medium Screen view:
+
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/342ba4fc-6a4e-47b4-91ec-50880f8f901a)
+
+
+
 - iPad view:
 
-
-
-
-- Laptop view:
-
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/a178d95b-0680-43db-986f-90cc24ba5d86)
 
 
 
