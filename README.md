@@ -17,8 +17,8 @@ I used the Responsive Viewer chrome extenstion to test the responsiveness on eac
 
 - Galaxy S9 view:
 
+![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/d023046a-1d53-427c-8e8f-392989176a04)
 
-![image](https://github.com/Neillcllghn/test_taskmanager_react/assets/109948740/5edc8b1b-b7c0-4071-9021-20d044da0b89)
 
 
 
